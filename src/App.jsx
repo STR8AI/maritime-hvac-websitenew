@@ -10,39 +10,33 @@ export default function App() {
     {
       title: "Mini Splits",
       desc: "High-efficiency heating and cooling with fast installs.",
-      image: "/assets/services/mini-splits.png",
-      isIcon: false,
+      image: "/assets/services/mini-splits.png"
     },
     {
       title: "Central Heat Pumps",
       desc: "Whole-home comfort designed for our climate.",
-      image: "/assets/services/central-heat-pumps.png",
-      isIcon: false,
+      image: "/assets/services/central-heat-pumps.png"
     },
     {
       title: "Insulation",
       desc: "Keep the heat in, lower your bills, and improve comfort.",
-      image: "/assets/services/insulation.png",
-      isIcon: false,
+      image: "/assets/services/insulation.png"
     },
     {
       title: "Air Exchangers & Ventilation",
       desc: "Cleaner air, better airflow, and balanced humidity.",
-      image: "/assets/services/air-exchangers.png",
-      isIcon: false,
+      image: "/assets/services/air-exchangers.png"
     },
     {
       title: "Heat Pump & Ventilation Cleaning",
       desc: "Boost efficiency, airflow, and extend equipment life.",
-      image: "/assets/services/cleaning.png",
-      isIcon: false,
+      image: "/assets/services/cleaning.png"
     },
     {
-      title: "Alkaline Water Conditioners",
-      desc: "Better tasting water and plumbing protection (not RO).",
-      image: "/assets/services/water.png",
-      isIcon: false,
-    },
+      title: "Water Treatment",
+      desc: "Alkaline water conditioners for better tasting water and plumbing protection (not RO).",
+      image: "/assets/services/water.png"
+    }
   ];
 
   return (
