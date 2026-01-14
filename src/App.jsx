@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import "./styles.css";
 import ChatBookingWidget from './components/ChatBookingWidget.jsx';
 import Hero from './components/Hero.jsx';
