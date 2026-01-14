@@ -36,6 +36,11 @@ export default function App() {
       title: "Water Treatment",
       desc: "Alkaline water conditioners for better tasting water and plumbing protection (not RO).",
       image: "/assets/services/water.png"
+    },
+    {
+      title: "Air Treatment",
+      desc: "Filtration, purification, and humidity control for cleaner, healthier indoor air.",
+      image: "/assets/air2.png"
     }
   ];
 

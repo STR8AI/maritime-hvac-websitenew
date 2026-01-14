@@ -20,8 +20,8 @@ export default function Hero({ onOpenBooking }) {
       <div className="hero-clone-inner">
         <div className="hero-clone-text">
           <h1>Maritime HVAC</h1>
-          <h2>Heating, Cooling &amp; Electrical</h2>
-          <h3>Serving the Maritimes</h3>
+          <h2>Peggy's Cove comfort, delivered</h2>
+          <h3>Troy and the Maritime HVAC van covering the Maritimes</h3>
 
           <p>
             Maritime HVAC keeps your home comfortable all year round with expert
