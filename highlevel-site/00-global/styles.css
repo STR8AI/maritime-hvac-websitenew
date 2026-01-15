@@ -64,7 +64,7 @@ section {
   padding-top: 90px;
   background-image:
     linear-gradient(rgba(0,0,0,.45), rgba(0,0,0,.45)),
-    url("PASTE-HERO-BG-CDN-URL-HERE");
+    url("https://storage.googleapis.com/msgsndr/ISncZYLu2hGulBBFoZtW/media/XXXXXXXX.png");
 }
 .hero-bg {
   position: absolute;
@@ -116,9 +116,9 @@ section {
 .hero-copy p { max-width: var(--container-max); color: rgba(255,255,255,0.9); line-height: 1.6; margin: 0 0 18px; }
 .hero-btn { background: var(--gold); color: #0c1622; border: none; padding: 12px 18px; border-radius: 10px; font-weight: 850; box-shadow: 0 12px 28px rgba(0,0,0,0.35); cursor: pointer; }
 .hero-visual { position: relative; display: flex; justify-content: center; align-items: end; height: 520px; }
-.hero-person { width: 360px; border-radius: 14px; box-shadow: 0 22px 40px rgba(0,0,0,0.45); transform: rotate(-1deg); border: 6px solid rgba(255,255,255,0.06); }
-.hero-person { right: 12%; bottom: 0; height: 88%; position: absolute; }
-.hero-van { position: absolute; right: 4%; bottom: 6%; width: 380px; filter: drop-shadow(0 18px 40px rgba(0,0,0,0.55)); }
+.hero-person { height: 520px; width: auto; border-radius: 14px; box-shadow: 0 22px 40px rgba(0,0,0,0.45); transform: rotate(-1deg); border: 6px solid rgba(255,255,255,0.06); }
+.hero-person { right: 12%; bottom: 0; position: absolute; }
+.hero-van { position: absolute; right: 4%; bottom: 6%; width: 420px; height: auto; filter: drop-shadow(0 18px 40px rgba(0,0,0,0.55)); }
 
 /* Services grid */
 .services-modern { padding: 70px 18px; background: var(--bg-dark); }
