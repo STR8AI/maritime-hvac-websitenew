@@ -8,19 +8,15 @@ body {
 }
 
 .mh-site {
-  width: 100%;
-  overflow-x: hidden;
   font-family: var(--font-body);
   background: var(--bg-dark);
   color: var(--text-light);
-  min-height: 100vh;
 }
 a { color: inherit; text-decoration: none; }
 img { max-width: 100%; display: block; }
 
 /* Layout helpers */
-.section {
-  padding: var(--space-6) var(--space-4);
+section {
   max-width: var(--container-max);
   margin: 0 auto;
 }
@@ -205,6 +201,11 @@ img { max-width: 100%; display: block; }
   .services-cards { grid-template-columns: 1fr; }
 }
 
+/* =========================
+   TABLET (≤ 900px)
+   - Hero stacks
+   - Services: 4 → 2 columns
+========================= */
 @media (max-width: 900px) {
   .hero-content h1 { line-height: 1.1; }
   .hero-content p { margin-left: auto; margin-right: auto; }
@@ -220,6 +221,12 @@ img { max-width: 100%; display: block; }
   .services-cards { grid-template-columns: repeat(2, 1fr); }
 }
 
+/* =========================
+   PHONE (≤ 520px)
+   - Services: 2 → 1 column
+   - Reduce image heights
+   - Mobile spacing only
+========================= */
 @media (max-width: 520px) {
   .services-cards { grid-template-columns: 1fr; }
   .service-image { height: 150px; }
