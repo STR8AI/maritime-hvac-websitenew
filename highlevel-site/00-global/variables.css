@@ -1,0 +1,21 @@
+:root {
+  /* palette */
+  --nav-dark: #0c2230;
+  --bg-dark: #070a0f;
+  --gold: #f5b942;
+  --gold-dark: #d63434;
+  --text-light: #ffffff;
+  --muted: #9aa3ad;
+
+  /* typography */
+  --font-body: "Inter", -apple-system, "Segoe UI", sans-serif;
+  --font-heading: "Inter", -apple-system, "Segoe UI", sans-serif;
+
+  /* spacing */
+  --space-1: 8px;
+  --space-2: 12px;
+  --space-3: 16px;
+  --space-4: 20px;
+  --space-5: 28px;
+  --space-6: 40px;
+}
