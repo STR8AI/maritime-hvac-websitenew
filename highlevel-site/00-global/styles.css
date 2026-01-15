@@ -62,6 +62,11 @@ section {
   align-items: center;
   overflow: hidden;
   padding-top: 90px;
+  background: radial-gradient(
+    circle at top right,
+    #2b5d87,
+    #0e2a3b 60%
+  );
 }
 .hero-bg {
   position: absolute;
