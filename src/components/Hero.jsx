@@ -1,13 +1,8 @@
 export default function Hero({ onOpenBooking }) {
   return (
-    <section className="hero-clone">
-      <div className="hero-clone-overlay" />
-
-      <div className="hero-wave"></div>
-
-      {/* white swoosh line */}
+    <section className="hero">
       <svg
-        className="hero-clone-wave"
+        className="hero-swoosh"
         viewBox="0 0 1440 140"
         preserveAspectRatio="none"
       >
@@ -17,11 +12,10 @@ export default function Hero({ onOpenBooking }) {
         />
       </svg>
 
-      <div className="hero-clone-inner">
-        <div className="hero-clone-text">
+      <div className="hero-inner">
+        <div className="hero-copy">
           <h1>Maritime HVAC</h1>
           <h2>Peggy's Cove comfort, delivered</h2>
-          <h3>Troy and the Maritime HVAC van covering the Maritimes</h3>
 
           <p>
             Maritime HVAC keeps your home comfortable all year round with expert
@@ -29,26 +23,24 @@ export default function Hero({ onOpenBooking }) {
             Schedule your service today and stay cozy!
           </p>
 
-          <button className="hero-clone-btn" onClick={onOpenBooking}>
+          <button className="hero-btn" onClick={onOpenBooking}>
             APPLY NOW
           </button>
         </div>
 
-        <div className="hero-clone-visuals">
+        <div className="hero-visual">
           <img
             src="/assets/hero-person.png"
-            className="hero-clone-person"
+            className="hero-person"
             alt="Maritime HVAC Owner"
           />
           <img
             src="/assets/van.png"
-            className="hero-clone-van"
+            className="hero-van"
             alt="Maritime HVAC Van"
           />
         </div>
       </div>
-
-      <div className="hero-clone-bottomfade" />
     </section>
   );
 }

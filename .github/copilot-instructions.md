@@ -1,30 +1,39 @@
+
 # Copilot Instructions
 
 ## Project snapshot
-- Vite + React 18 single-page marketing site for Maritime HVAC; entry at src/main.jsx mounts App.
-- App renders sticky top bar, hero, service grid, and a slide-in chat/booking widget; styles concentrated in src/styles.css and components/ChatBookingWidget.css.
-- Service content is inline data in App.jsx; no CMS or API calls.
+- Vite + React 18 single-page marketing site; entry is src/main.jsx -> App.jsx.
+- Layout: sticky top nav, hero (Hero.jsx), services grid, and floating ChatBookingWidget; all data is inline, no API/CMS.
+- Assets are served from public/assets with absolute paths (e.g., /assets/services/*.png, /assets/hero-person.png).
+
 
 ## Run/build
-- Dev server: `npm install` then `npm run dev` (Vite default port 5173, host exposed; preview on 4174 via `npm run preview`).
-- Production bundle: `npm run build` (outputs to dist/ per Vite defaults).
+- Install deps: npm install.
+- Dev: npm run dev -- --host (Vite default 5173).
+- Prod preview: npm run build && npm run preview -- --host (serves dist/ output).
+- Asset helper: fetch_mhvac_images.sh scrapes maritimehvac.ca for image URLs and downloads into public/assets/services when needed.
+
 
 ## File layout & patterns
-- Global styles and theme tokens live in src/styles.css (navy/red palette, hero background, responsive rules). The file also has broad selectors that hide all iframes and any element with "chat" in the class/id; override with more specific selectors when embedding iframes (see ChatBookingWidget.css).
-- Components: Hero.jsx (hero layout, APPLY NOW button triggers booking open callback) and ChatBookingWidget.jsx (floating CTA + slide-in iframe). Asset paths assume files in public/assets (logo, hero-person, van, services imagery).
-- App.jsx controls bookingOpen state but the widget currently manages its own `open` state and ignores props; coordinate behavior by lifting state or passing handlers if you need external control.
+- Styling lives in src/styles.css (navy/red palette, hero background, responsive rules) and src/components/ChatBookingWidget.css for the widget.
+- Global CSS hides all iframes and any element whose class/id contains “chat”; whitelist new embeds with specific selectors (cbw-iframe does this for the widget).
+- Nav links target #home/#services/#about/#contact; only hero and services sections exist—add sections or update anchors to avoid dead links.
+- Services list is an inline array in App.jsx; keep image names in sync with public/assets/services.* files.
+- Hero layers background peggys-cove-hero.png with hero-person.png and van.png; preserve positioning/z-index when swapping art.
 
-## UI notes
-- Chat/Booking panel uses an iframe pointed at https://maritimehvac.info/bookingservice; CSS class .cbw-iframe counteracts the global iframe hide rule. When adding other iframes, add a specific class and display rule.
-- Global CSS hides `[class*="chat"]` and `[id*="chat"]`; avoid naming clashes for new elements that should remain visible.
-- Typography uses system fonts; colors defined as CSS variables in :root; background is dark (#0a0f18).
 
-## Content & links
-- Navigation anchors expect sections with ids home/services/about/contact; only services and hero exist—add matching sections or update links to avoid dead anchors.
-- Service cards presently share one "View Service" CTA without routing; extend via additional components or links in App.jsx services array.
+## Component notes
+- ChatBookingWidget currently owns its own open state and ignores props; App passes open/onClose but they are unused—lift state if central control is required.
+- Hero APPLY NOW button calls onOpenBooking; wire this to the widget state if you refactor visibility.
+- index.html only mounts #root and loads /src/main.jsx; no other HTML scaffolding.
 
-## Testing & linting
-- No tests or linters configured; changes run purely via Vite. Keep modifications small and smoke-test in the browser.
 
-## Asset handling
-- Static assets are served from public/; reference via absolute paths (e.g., /assets/hero-person.png). Update public/assets/services/* for service imagery.
+## Testing/QA
+- No automated tests or linters; rely on manual browser checks across breakpoints.
+- mhvac-issue.md documents manual QA points: hero imagery/contrast, services copy/images (including Water + Air Solutions), and booking iframe URL https://maritimehvac.info/bookingservice.
+
+
+## Repo hygiene
+- .gitignore covers node_modules/, dist/, .vite/; keep dist/ and downloaded assets out of git unless intentional.
+- Default branch main; current work on feature/some-change.
+
