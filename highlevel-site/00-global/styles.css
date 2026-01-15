@@ -64,18 +64,18 @@ section {
   padding-top: 90px;
   background-image:
     linear-gradient(rgba(0,0,0,.45), rgba(0,0,0,.45)),
-    url("https://storage.googleapis.com/msgsndr/ISncZYLu2hGulBBFoZtW/media/XXXXXXXX.png");
+    url("/assets/peggys-cove-hero.png");
 }
 .hero-bg {
   position: absolute;
   inset: 0;
-  background: url("https://assets.cdn.highlevel.com/XXXX/hero-bg.jpg") center/cover no-repeat;
+  background: url("/assets/peggys-cove-hero.png") center/cover no-repeat;
   z-index: 0;
 }
 .hero-overlay {
   position: absolute;
   inset: 0;
-  background: url("https://assets.cdn.highlevel.com/XXXX/hero-overlay.png") center/cover no-repeat;
+  background: url("/assets/bg-photo-peggyscove.png") center/cover no-repeat;
   opacity: 0.8;
   z-index: 1;
   pointer-events: none;
