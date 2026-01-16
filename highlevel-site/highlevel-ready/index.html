@@ -7,6 +7,44 @@
   <meta name="description" content="Maritime HVAC — Reliable heating, cooling, electrical services" />
   <link rel="icon" href="../04-assets/images/other/favicon.svg" />
   <link rel="stylesheet" href="styles.css" />
+  <!-- Set this meta tag to your GoHighLevel asset base URL (no trailing slash), e.g.
+       https://assets.gohighlevel.com/your-account-id/uploads
+       Leave empty to use relative paths included in the HTML. -->
+  <meta name="ghl-assets" content="" />
+  <script>
+    // If the page has a GHL asset base URL, rewrite relative asset references
+    (function(){
+      try{
+        var meta = document.querySelector('meta[name="ghl-assets"]');
+        if(!meta) return;
+        var base = (meta.content||'').trim();
+        if(!base) return; // nothing to do
+
+        function basename(path){
+          return path.split('/').pop().split('?')[0].split('#')[0];
+        }
+
+        // Update img[src]
+        document.addEventListener('DOMContentLoaded', function(){
+          document.querySelectorAll('img').forEach(function(img){
+            var src = img.getAttribute('src') || '';
+            if(src.indexOf('../04-assets/images/other/') === 0){
+              img.src = base + '/' + basename(src);
+            }
+          });
+
+          // Update background-image inline styles (hero-bg)
+          document.querySelectorAll('.hero-bg').forEach(function(el){
+            var style = el.style.backgroundImage || getComputedStyle(el).backgroundImage || '';
+            var m = style.match(/url\(["']?(.*?)["']?\)/);
+            if(m && m[1].indexOf('../04-assets/images/other/') === 0){
+              el.style.backgroundImage = "url('" + base + '/' + basename(m[1]) + "')";
+            }
+          });
+        });
+      }catch(e){console.warn('GHL asset rewrite failed', e)}
+    })();
+  </script>
 </head>
 <body>
   <main>
