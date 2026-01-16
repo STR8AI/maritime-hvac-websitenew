@@ -266,3 +266,15 @@ section {
   .hero-person { height: 280px; right: 10%; }
   .hero-van { width: 300px; }
 }
+
+.maritime-headshot {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  box-shadow: 0 12px 20px rgba(0,0,0,0.20);
+  object-fit: cover;
+}
+
+@media (max-width: 600px) {
+  .maritime-headshot { width: 100px; height: 100px; }
+}
