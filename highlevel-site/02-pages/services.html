@@ -1,99 +1,386 @@
-<!-- Header / Nav -->
-<header class="topbar">
-  <div class="topbar-inner">
-    <!-- Logo -->
-    <a class="brand" href="#home">
-      <img class="brand-logo"
-           src="https://storage.googleapis.com/msgsndr/ISncZYLu2hGulBBFoZtW/media/6969437e4e42b939a6f67d96.png"
-           alt="Maritime HVAC" />
-    </a>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Maritime HVAC — Services</title>
+  <meta name="description" content="Heating + Cooling, Electrical, Water + Air Solutions, and Service & Maintenance Plans." />
 
-    <!-- Navigation links -->
-    <nav class="nav-links">
-      <a href="#home">Home</a>
-      <a href="#services">Services</a>
-      <a href="#about">About</a>
-      <a href="#contact">Contact</a>
-    </nav>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-    <!-- Call-to-action button -->
-    <a class="topbar-cta" href="#booking">Request Service</a>
-  </div>
-</header>
+  <!-- External stylesheet -->
+  <link rel="stylesheet" href="../00-global/styles.css">
+</head>
 
-<!-- Services landing page shell -->
-<div class="mh-site">
-<section class="section" id="services">
-  <div class="center" style="margin-bottom:18px;">
-    <h1>Services</h1>
-    <p>Heating, cooling, electrical, ventilation, water treatment, and maintenance built for the Maritimes.</p>
-  </div>
-  <div class="services-cards">
-    <!-- Duplicate cards as needed -->
-    <article class="service-card">
-      <img class="service-image" src="https://storage.googleapis.com/msgsndr/ISncZYLu2hGulBBFoZtW/media/693873c2578cc70a2abe190e.png" alt="Mini splits" />
-      <div class="service-body">
-        <h3 class="service-title">Mini Splits</h3>
-        <p class="service-desc">High-efficiency installs with fast turnaround.</p>
-        <button class="service-btn">View Service</button>
+<body>
+  <!-- NAV -->
+  <header class="nav" role="banner">
+    <div class="wrap nav-inner" aria-label="Main navigation">
+      <a class="brand" href="#top" aria-label="Go to top">
+        <span class="brand-badge" aria-hidden="true">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M12 2l3 4H9l3-4Z" fill="rgba(255,255,255,.95)"/>
+            <path d="M10 6h4l1 16H9l1-16Z" fill="rgba(255,255,255,.75)"/>
+            <path d="M5 21h14" stroke="rgba(255,255,255,.9)" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </span>
+        <span>Maritime HVAC</span>
+      </a>
+
+      <nav class="nav-links" aria-label="Primary navigation">
+        <a href="#services">Services</a>
+        <a href="#details">Details</a>
+        <a href="#contact">Contact</a>
+        <a class="btn btn-primary" href="#contact" aria-label="Request service">Request Service</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <main id="top" role="main">
+    <section class="hero" aria-labelledby="hero-heading">
+      <div class="wrap hero-grid">
+        <div>
+          <div class="kicker" aria-hidden="true"><span class="kicker-dot"></span> Serving the Maritimes • Residential & Commercial</div>
+          <h1 id="hero-heading">Comfort, power, and clean air—built for our Maritime climate.</h1>
+          <p class="subhead">
+            Explore our four core offerings below. Each includes a clear scope, an easy process, and detailed information homeowners need.
+          </p>
+
+          <div class="hero-cta">
+            <a class="btn btn-primary" href="#services">View the 4 Offerings</a>
+            <a class="btn" href="#contact">Get a Quote</a>
+          </div>
+
+          <div class="hero-card" style="margin-top:20px;">
+            <h3>What you can do here</h3>
+            <p>Pick an offering, then scroll into the full detail panel—designed to feel like a full services page without leaving the site.</p>
+
+            <ul class="hero-bullets" aria-hidden="false">
+              <li><span class="tick" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 24 24" fill="none"><path d="M20 6 9 17l-5-5" stroke="rgba(255,255,255,.9)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span> Jump from the 4 cards into deeper details.</li>
+              <li><span class="tick" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 24 24" fill="none"><path d="M20 6 9 17l-5-5" stroke="rgba(255,255,255,.9)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span> Clear CTAs: request service, book an inspection, or ask about financing.</li>
+            </ul>
+
+            <div class="portrait-wrap" aria-hidden="false">
+              <!-- Replace with your actual image paths -->
+              <img class="maritime-headshot"
+                   src="/assets/images/person-hero.png"
+                   srcset="/assets/images/person-hero.png 1x, /assets/images/person-hero@2x.png 2x"
+                   alt="Headshot of Maritime HVAC owner">
+              <div class="portrait-info">
+                <div style="font-size:14px;">Maritime HVAC</div>
+                <div style="font-size:13px; color:rgba(255,255,255,.85); font-weight:500;">Serving homeowners across the Maritimes</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Aside: Quick highlights (kept for layout balance on wider screens) -->
+        <aside class="hero-card" aria-label="Quick highlights">
+          <h3>Quick highlights</h3>
+          <p>Pick an offering, then scroll into the full detail panel—designed to feel like a "full services page" without leaving the site.</p>
+
+          <ul class="hero-bullets">
+            <li><span class="tick"><svg width="12" height="12" viewBox="0 0 24 24" fill="none"><path d="M20 6 9 17l-5-5" stroke="rgba(255,255,255,.9)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span> Request service, book inspection, or ask about rebates.</li>
+            <li><span class="tick"><svg width="12" height="12" viewBox="0 0 24 24" fill="none"><path d="M20 6 9 17l-5-5" stroke="rgba(255,255,255,.9)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span> Clear process and detailed inclusions per offering.</li>
+          </ul>
+        </aside>
       </div>
-    </article>
-    <article class="service-card">
-      <img class="service-image" src="https://storage.googleapis.com/msgsndr/ISncZYLu2hGulBBFoZtW/media/693873c2e03e9dc89281d139.png" alt="Heat pump indoor unit" />
-      <div class="service-body">
-        <h3 class="service-title">Heat Pump Repair</h3>
-        <p class="service-desc">Fast diagnostics and repairs to restore comfort quickly.</p>
-        <button class="service-btn">View Service</button>
+    </section>
+
+    <!-- SERVICES -->
+    <section class="section" id="services" aria-label="Our Services">
+      <div class="wrap">
+        <h2>Our Services</h2>
+        <p class="lead">
+          We offer heating, cooling, electrical, water & air solutions, and maintenance plans to keep your home running smoothly.
+        </p>
+
+        <div class="cards" role="list">
+          <article class="card" role="listitem" aria-label="Heating and Cooling">
+            <div class="card-top">
+              <div class="icon-tile" aria-hidden="true"><svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M12 2v20" stroke="rgba(16,35,70,.55)" stroke-width="2" stroke-linecap="round"/></svg></div>
+              <h3 style="color:var(--hc)">HEATING +<br/>COOLING</h3>
+            </div>
+            <div class="card-body">
+              <ul class="list">
+                <li>Mini Splits</li>
+                <li>Central / Ducted Heat Pumps</li>
+                <li>Insulation support</li>
+                <li>Ventilation integration</li>
+              </ul>
+              <button class="more" data-open="hc" aria-controls="panel-hc">and more… →</button>
+            </div>
+          </article>
+
+          <article class="card" role="listitem" aria-label="Electrical">
+            <div class="card-top">
+              <div class="icon-tile" aria-hidden="true"><svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M13 2 4 14h7l-1 8 9-12h-7l1-8Z" stroke="rgba(16,35,70,.55)" stroke-width="2" stroke-linejoin="round"/></svg></div>
+              <h3 style="color:var(--el)">ELECTRICAL</h3>
+            </div>
+            <div class="card-body">
+              <ul class="list">
+                <li>Panel upgrades (100 / 200 / 400 amp)</li>
+                <li>EV charging station installation</li>
+                <li>Generators (standby / portable)</li>
+                <li>Renovations & fixtures</li>
+              </ul>
+              <button class="more" data-open="el" aria-controls="panel-el">and more… →</button>
+            </div>
+          </article>
+
+          <article class="card" role="listitem" aria-label="Water and Air Solutions">
+            <div class="card-top">
+              <div class="icon-tile" aria-hidden="true"><svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M12 2s7 7 7 12a7 7 0 1 1-14 0c0-5 7-12 7-12Z" stroke="rgba(16,35,70,.55)" stroke-width="2"/></svg></div>
+              <h3 style="color:var(--wa)">WATER + AIR<br/>SOLUTIONS</h3>
+            </div>
+            <div class="card-body">
+              <ul class="list">
+                <li>Electric hot water tanks</li>
+                <li>Air exchangers & ventilation</li>
+                <li>Air purification + humidifiers</li>
+                <li>Water treatment options</li>
+              </ul>
+              <button class="more" data-open="wa" aria-controls="panel-wa">and more… →</button>
+            </div>
+          </article>
+
+          <article class="card" role="listitem" aria-label="Service and Maintenance Plans">
+            <div class="card-top">
+              <div class="icon-tile" aria-hidden="true"><svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M12 2 3 6v6c0 5 4 9 9 10 5-1 9-5 9-10V6l-9-4Z" stroke="rgba(16,35,70,.55)" stroke-width="2"/></svg></div>
+              <h3 style="color:var(--mp)">SERVICE &<br/>MAINTENANCE<br/>PLANS</h3>
+            </div>
+            <div class="card-body">
+              <ul class="list">
+                <li>Heat pump & ventilation cleaning</li>
+                <li>Repair service calls</li>
+                <li>Seasonal checkups</li>
+                <li>Priority scheduling</li>
+              </ul>
+              <button class="more" data-open="mp" aria-controls="panel-mp">and more… →</button>
+            </div>
+          </article>
+        </div>
       </div>
-    </article>
-    <article class="service-card">
-      <img class="service-image" src="https://storage.googleapis.com/funnel-ai-production/image-generation/1CVSJ7Bbx27ah4UVRGSg/tds-faucet-nano1.png" alt="Water treatment" />
-      <div class="service-body">
-        <h3 class="service-title">Water Treatment</h3>
-        <p class="service-desc">Clean, filtered water with tailored system options.</p>
-        <button class="service-btn">View Service</button>
+    </section>
+
+    <!-- DETAIL PANELS -->
+    <section class="details" id="details" aria-label="Service Details">
+      <div id="panel-hc" class="panel" role="region" aria-labelledby="hc-title">
+        <div class="panel-head">
+          <div class="panel-title">
+            <div class="icon-tile" aria-hidden="true" style="background:linear-gradient(180deg,#fff,#eef)"><span style="width:12px;height:12px;border-radius:50%;background:var(--hc);display:block;"></span></div>
+            <div>
+              <h4 id="hc-title">Heating + Cooling</h4>
+              <p>Mini splits for non-ducted homes, central ducted heat pumps for whole-home coverage, and ventilation options for better air quality.</p>
+            </div>
+          </div>
+
+          <div class="panel-actions">
+            <a class="btn-sm primary" href="#contact">Request Service</a>
+            <button class="btn-sm" data-close aria-label="Close panel">Close</button>
+          </div>
+        </div>
+
+        <div class="panel-grid">
+          <div class="box">
+            <h5>What we install & support</h5>
+            <p>We help you select a system that matches your layout, comfort needs, and usage—then install it cleanly and explain how to run it efficiently.</p>
+            <div style="margin-top:12px;">
+              <span class="chip">Mini Splits (ductless)</span>
+              <span class="chip">Central / ducted heat pumps</span>
+              <span class="chip">Ventilation integration</span>
+              <span class="chip">Seasonal tune-ups</span>
+            </div>
+          </div>
+
+          <div class="box">
+            <h5>Our process</h5>
+            <ol class="steps" style="margin:0;padding-left:18px;">
+              <li style="margin:8px 0"><strong>Quick discovery</strong><div style="color:var(--muted);font-size:13px;margin-top:6px;">Tell us what's happening (hot/cold spots, humidity, noise, high bills).</div></li>
+              <li style="margin:8px 0"><strong>Home assessment</strong><div style="color:var(--muted);font-size:13px;margin-top:6px;">We review layout, ducts, and placement options.</div></li>
+              <li style="margin:8px 0"><strong>Right-size recommendation</strong><div style="color:var(--muted);font-size:13px;margin-top:6px;">Confirm configuration and timeline.</div></li>
+              <li style="margin:8px 0"><strong>Install + walkthrough</strong><div style="color:var(--muted);font-size:13px;margin-top:6px;">We test and show you operation and maintenance basics.</div></li>
+            </ol>
+          </div>
+        </div>
       </div>
-    </article>
-    <article class="service-card">
-      <img class="service-image" src="https://storage.googleapis.com/msgsndr/ISncZYLu2hGulBBFoZtW/media/693873c205e1fa37a2bf4dc2.png" alt="Electric water tanks" />
-      <div class="service-body">
-        <h3 class="service-title">Electric Water Tanks</h3>
-        <p class="service-desc">Reliable hot water tanks sized for your home and usage.</p>
-        <button class="service-btn">View Service</button>
+
+      <!-- Additional panels (el, wa, mp) -->
+      <div id="panel-el" class="panel" role="region" aria-labelledby="el-title">
+        <div class="panel-head">
+          <div class="panel-title">
+            <div class="icon-tile" aria-hidden="true"><span style="width:12px;height:12px;border-radius:50%;background:var(--el);display:block;"></span></div>
+            <div>
+              <h4 id="el-title">Electrical</h4>
+              <p>Panel upgrades, EV chargers, generators, and wiring for renovations—quoted clearly and completed safely.</p>
+            </div>
+          </div>
+
+          <div class="panel-actions">
+            <a class="btn-sm primary" href="#contact">Request Service</a>
+            <button class="btn-sm" data-close aria-label="Close panel">Close</button>
+          </div>
+        </div>
+
+        <div class="panel-grid">
+          <div class="box">
+            <h5>Popular projects</h5>
+            <p>Panel upgrades, EV chargers, generator installations, and surge protection are commonly bundled with HVAC work.</p>
+            <div style="margin-top:12px;">
+              <span class="chip">Panel upgrades</span>
+              <span class="chip">EV charger installation</span>
+              <span class="chip">Generators</span>
+            </div>
+          </div>
+
+          <div class="box">
+            <h5>Process</h5>
+            <ol style="margin:0;padding-left:18px;">
+              <li style="margin:8px 0"><strong>Assess load</strong></li>
+              <li style="margin:8px 0"><strong>Plan routing</strong></li>
+              <li style="margin:8px 0"><strong>Install & verify</strong></li>
+              <li style="margin:8px 0"><strong>Walkthrough</strong></li>
+            </ol>
+          </div>
+        </div>
       </div>
-    </article>
-    <article class="service-card">
-      <img class="service-image" src="https://storage.googleapis.com/msgsndr/ISncZYLu2hGulBBFoZtW/media/693873c2169a424289f3819d.png" alt="Insulation" />
-      <div class="service-body">
-        <h3 class="service-title">Insulation</h3>
-        <p class="service-desc">Seal and insulate to cut drafts and improve efficiency.</p>
-        <button class="service-btn">View Service</button>
+
+      <div id="panel-wa" class="panel" role="region" aria-labelledby="wa-title">
+        <div class="panel-head">
+          <div class="panel-title">
+            <div class="icon-tile" aria-hidden="true"><span style="width:12px;height:12px;border-radius:50%;background:var(--wa);display:block;"></span></div>
+            <div>
+              <h4 id="wa-title">Water + Air Solutions</h4>
+              <p>Ventilation, air exchangers, air quality systems, electric hot water tanks, and optional solar integration.</p>
+            </div>
+          </div>
+
+          <div class="panel-actions">
+            <a class="btn-sm primary" href="#contact">Request Service</a>
+            <button class="btn-sm" data-close aria-label="Close panel">Close</button>
+          </div>
+        </div>
+
+        <div class="panel-grid">
+          <div class="box">
+            <h5>Air exchangers & ventilation</h5>
+            <p>Systems that replace stale indoor air, lower pollutants, and reduce mold risk when installed correctly.</p>
+            <div style="margin-top:12px;">
+              <span class="chip">Air exchangers</span>
+              <span class="chip">Ventilation installation</span>
+              <span class="chip">Air quality improvements</span>
+            </div>
+          </div>
+
+          <div class="box">
+            <h5>Process</h5>
+            <ol style="margin:0;padding-left:18px;">
+              <li style="margin:8px 0"><strong>Identify the issue</strong></li>
+              <li style="margin:8px 0"><strong>Inspect & recommend</strong></li>
+              <li style="margin:8px 0"><strong>Install cleanly</strong></li>
+              <li style="margin:8px 0"><strong>Show you the basics</strong></li>
+            </ol>
+          </div>
+        </div>
       </div>
-    </article>
-    <article class="service-card">
-      <img class="service-image" src="https://storage.googleapis.com/msgsndr/ISncZYLu2hGulBBFoZtW/media/693873c2fb91d0447740b9e1.png" alt="Central air conditioning" />
-      <div class="service-body">
-        <h3 class="service-title">Central Air Conditioning</h3>
-        <p class="service-desc">Whole-home cooling with efficient, balanced airflow.</p>
-        <button class="service-btn">View Service</button>
+
+      <div id="panel-mp" class="panel" role="region" aria-labelledby="mp-title">
+        <div class="panel-head">
+          <div class="panel-title">
+            <div class="icon-tile" aria-hidden="true"><span style="width:12px;height:12px;border-radius:50%;background:var(--mp);display:block;"></span></div>
+            <div>
+              <h4 id="mp-title">Service & Maintenance Plans</h4>
+              <p>Preventative cleaning, seasonal checkups, and priority scheduling to reduce breakdowns and protect efficiency.</p>
+            </div>
+          </div>
+
+          <div class="panel-actions">
+            <a class="btn-sm primary" href="#contact">Request Service</a>
+            <button class="btn-sm" data-close aria-label="Close panel">Close</button>
+          </div>
+        </div>
+
+        <div class="panel-grid">
+          <div class="box">
+            <h5>What maintenance covers</h5>
+            <p>Cleaning, inspection, and minor repairs to keep equipment reliable and efficient.</p>
+            <div style="margin-top:12px;">
+              <span class="chip">Heat pump cleaning</span>
+              <span class="chip">Ventilation cleaning</span>
+              <span class="chip">Priority booking</span>
+            </div>
+          </div>
+
+          <div class="box">
+            <h5>Process</h5>
+            <ol style="margin:0;padding-left:18px;">
+              <li style="margin:8px 0"><strong>Schedule</strong></li>
+              <li style="margin:8px 0"><strong>Inspect + clean</strong></li>
+              <li style="margin:8px 0"><strong>Optimize settings</strong></li>
+              <li style="margin:8px 0"><strong>Action plan</strong></li>
+            </ol>
+          </div>
+        </div>
       </div>
-    </article>
-    <article class="service-card">
-      <img class="service-image" src="https://storage.googleapis.com/msgsndr/ISncZYLu2hGulBBFoZtW/media/693873c28db5ef705886662b.png" alt="Furnace install" />
-      <div class="service-body">
-        <h3 class="service-title">Furnace Install</h3>
-        <p class="service-desc">Efficient furnace installs sized for Maritime winters.</p>
-        <button class="service-btn">View Service</button>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="section" id="contact" aria-label="Contact">
+      <div class="wrap">
+        <h2>Request Service</h2>
+        <p class="lead">Tell us what you need and we’ll route you to the right offering. Prefer a quick call? Use the phone link below.</p>
+
+        <div class="panel" style="display:block;">
+          <div class="panel-grid" style="grid-template-columns:1fr 1fr;">
+            <div class="box">
+              <h5>Contact</h5>
+              <p style="margin-bottom:10px;">
+                <strong>Phone:</strong> <a href="tel:9024146000">(902) 414-6000</a><br/>
+                <strong>Email:</strong> <a href="mailto:info@maritimehvac.ca">info@maritimehvac.ca</a><br/>
+                <strong>Website:</strong> <a href="https://app.lukario.app" target="_blank" rel="noopener">app.lukario.app</a>
+              </p>
+              <p>Include your address/postal code, the offering you're interested in, and any symptoms (noise, airflow, leaks, tripping breakers).</p>
+            </div>
+
+            <div class="box">
+              <h5>Quick form</h5>
+              <form id="contact-form" onsubmit="event.preventDefault(); alert('Thanks! This demo form is ready to connect to your booking system.');">
+                <label class="sr-only" for="name">Name</label>
+                <input id="name" name="name" required placeholder="Name" style="width:100%;padding:12px;border-radius:12px;border:1px solid var(--border);margin-bottom:10px;font:inherit;">
+                <label class="sr-only" for="phone">Phone</label>
+                <input id="phone" name="phone" required placeholder="Phone" style="width:100%;padding:12px;border-radius:12px;border:1px solid var(--border);margin-bottom:10px;font:inherit;">
+                <label class="sr-only" for="offering">Offering</label>
+                <select id="offering" name="offering" style="width:100%;padding:12px;border-radius:12px;border:1px solid var(--border);margin-bottom:10px;font:inherit;">
+                  <option>Heating + Cooling</option>
+                  <option>Electrical</option>
+                  <option>Water + Air Solutions</option>
+                  <option>Service & Maintenance Plans</option>
+                </select>
+                <label class="sr-only" for="msg">Message</label>
+                <textarea id="msg" name="msg" placeholder="What can we help you with?" rows="4" style="width:100%;padding:12px;border-radius:12px;border:1px solid var(--border);margin-bottom:12px;font:inherit;"></textarea>
+                <button class="btn-sm primary" type="submit" style="width:100%;">Submit Request</button>
+              </form>
+            </div>
+          </div>
+        </div>
       </div>
-    </article>
-    <article class="service-card">
-      <img class="service-image" src="https://storage.googleapis.com/msgsndr/ISncZYLu2hGulBBFoZtW/media/6969437e1573677c92a43902.png" alt="Heat pump cleaning" />
-      <div class="service-body">
-        <h3 class="service-title">Heat Pump Cleaning</h3>
-        <p class="service-desc">Deep cleaning to improve efficiency and air quality.</p>
-        <button class="service-btn">View Service</button>
+    </section>
+  </main>
+
+  <footer role="contentinfo">
+    <div class="wrap foot">
+      <div>© <span id="year"></span> Maritime HVAC • Services overview</div>
+      <div>
+        <a href="#services">Services</a> &nbsp;•&nbsp;
+        <a href="#contact">Request Service</a>
       </div>
-    </article>
-  </div>
-</section>
-</div>
+    </div>
+  </footer>
+
+  <!-- External script -->
+  <script src="../01-partials/scripts.js" defer></script>
+</body>
+</html>
