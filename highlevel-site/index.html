@@ -1,0 +1,428 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Maritime HVAC | Heating, Cooling, Electrical, Water + Air Solutions</title>
+  <meta name="description" content="Maritime HVAC provides heating, cooling, electrical, water + air solutions, and service & maintenance plans across the Maritimes." />
+
+  <!-- =========================
+       HEAD TRACKING CODE (PASTE HERE)
+       ========================= -->
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="00-global/styles.css" />
+</head>
+<body>
+  <!-- =========================
+       BODY TRACKING CODE (PASTE HERE)
+       ========================= -->
+
+  <!-- Utility bar -->
+  <div class="utility" role="region" aria-label="Contact bar">
+    <div class="inner">
+      <div class="left">
+        <span class="pill">📞 <strong>Call Us</strong>&nbsp;<a href="tel:9024146000">902-414-6000</a></span>
+        <span class="pill">✉️ <strong>Email</strong>&nbsp;<a href="mailto:info@maritimehvac.ca">info@maritimehvac.ca</a></span>
+      </div>
+      <div class="right" aria-hidden="false">
+        <div class="social" aria-label="Social links">
+          <a href="https://www.facebook.com" target="_blank" rel="noreferrer" aria-label="Facebook">f</a>
+          <a href="https://www.instagram.com" target="_blank" rel="noreferrer" aria-label="Instagram">⌁</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <header class="site-header" role="banner">
+    <div class="nav">
+      <div class="brand">
+        <img class="brand-logo" src="YOUR_LOGO_IMAGE_URL_HERE" alt="Maritime HVAC logo" />
+        <div class="brand-text">
+          <strong>Maritime HVAC</strong>
+        </div>
+      </div>
+
+      <nav class="links" aria-label="Main navigation">
+        <a href="#home" class="navlink active" data-route="home">Home</a>
+        <a href="#services" class="navlink" data-route="services">Services</a>
+        <a href="#about" class="navlink" data-route="about">About</a>
+        <a href="#contact" class="navlink" data-route="contact">Contact</a>
+        <a href="#financing" class="navlink" data-route="financing">Financing</a>
+        <a href="#careers" class="navlink" data-route="careers">Careers</a>
+        <a href="#warranty" class="navlink" data-route="warranty">Warranty</a>
+        <a href="#book-service" class="navlink" data-route="book-service">Book Service</a>
+        <a href="#book-installers" class="navlink" data-route="book-installers">Book Installers</a>
+      </nav>
+
+      <div class="nav-cta">
+        <button class="hamburger" id="hamburger" aria-expanded="false" aria-controls="drawer" aria-label="Open menu">☰</button>
+        <button class="btn btn-primary" onclick="routeTo('book-service')" aria-label="Request service">REQUEST SERVICE</button>
+      </div>
+    </div>
+
+    <div class="mobile-drawer" id="drawer" aria-hidden="true">
+      <div class="inner">
+        <button class="drawer-close" id="drawer-close" aria-label="Close menu">✕</button>
+        <a href="#home" data-route="home" class="navlink">Home</a>
+        <a href="#services" data-route="services" class="navlink">Services</a>
+        <a href="#about" data-route="about" class="navlink">About</a>
+        <a href="#contact" data-route="contact" class="navlink">Contact</a>
+        <a href="#financing" data-route="financing" class="navlink">Financing</a>
+        <a href="#careers" data-route="careers" class="navlink">Careers</a>
+        <a href="#warranty" data-route="warranty" class="navlink">Warranty</a>
+        <a href="#book-service" data-route="book-service" class="navlink">Book Service</a>
+        <a href="#book-installers" data-route="book-installers" class="navlink">Book Installers</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- HOME -->
+    <section class="page active" id="page-home" data-page="home" aria-hidden="false">
+      <section class="hero" aria-label="Home hero">
+        <div class="hero-bg" style="background-image:url('YOUR_HERO_BACKGROUND_IMAGE_URL_HERE');"></div>
+
+        <svg class="hero-wave" viewBox="0 0 1200 120" preserveAspectRatio="none" aria-hidden="true">
+          <path d="M0,64 C240,110 360,10 600,56 C840,100 960,22 1200,60 L1200,0 L0,0 Z" fill="rgba(255,255,255,.84)"></path>
+        </svg>
+
+        <div class="hero-inner">
+          <div class="hero-left">
+            <h1>Maritime HVAC</h1>
+            <h2>Heating, Cooling &amp; Electrical</h2>
+            <div class="subline">Serving the Maritimes</div>
+
+            <p class="hero-copy">
+              Maritime HVAC keeps your home comfortable all year round with expert heating, cooling, and electrical services across
+              the Maritimes. Schedule your service today and stay cozy!
+            </p>
+
+            <div class="hero-actions">
+              <button class="btn btn-apply" onclick="routeTo('financing')">APPLY NOW</button>
+              <button class="btn btn-ghost" onclick="routeTo('services')">VIEW SERVICES</button>
+            </div>
+          </div>
+
+          <div class="hero-right">
+            <img class="person" src="YOUR_TROY_PHOTO_URL_HERE" alt="Maritime HVAC technician" />
+            <div class="van-badge" aria-hidden="true">
+              <div class="badge-title">MARITIME HVAC</div>
+              <div class="mini">Local • Trusted • Certified</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Services preview -->
+      <section class="section section-dark" aria-labelledby="services-preview-title">
+        <div class="inner">
+          <div class="section-title">
+            <h3 id="services-preview-title">Our Services</h3>
+            <p>We offer a full range of heating, cooling, electrical, and maintenance services to keep your home running smoothly.</p>
+          </div>
+
+          <div class="service-grid" role="list">
+            <!-- 4 service cards -->
+            <article class="service-card" role="listitem">
+              <div class="service-head head-heat"><span class="dot"></span> HEATING + COOLING</div>
+              <div class="service-body">
+                <ul>
+                  <li>Furnaces</li>
+                  <li>Air Conditioners</li>
+                  <li>Heat Pumps (Ducted/Ductless)</li>
+                  <li>Mini Splits</li>
+                  <li>Air Exchangers + Ventilation</li>
+                  <li>Heat Recovery</li>
+                </ul>
+                <div class="andmore heat" onclick="routeTo('services')">and more...</div>
+              </div>
+            </article>
+
+            <article class="service-card" role="listitem">
+              <div class="service-head head-elec"><span class="dot"></span> ELECTRICAL</div>
+              <div class="service-body">
+                <ul>
+                  <li>Panel Upgrades (100, 200, 400 amp)</li>
+                  <li>EV Charging Station Installation</li>
+                  <li>Generators (standby/portable)</li>
+                  <li>Renovations & Fixtures</li>
+                </ul>
+                <div class="andmore elec" onclick="routeTo('services')">and more...</div>
+              </div>
+            </article>
+
+            <article class="service-card" role="listitem">
+              <div class="service-head head-water"><span class="dot"></span> WATER + AIR SOLUTIONS</div>
+              <div class="service-body">
+                <ul>
+                  <li>Hot Water (Tanks/Tankless)</li>
+                  <li>Air Purification</li>
+                  <li>Water Treatment & Purification</li>
+                  <li>Humidifiers</li>
+                </ul>
+                <div class="andmore water" onclick="routeTo('services')">and more...</div>
+              </div>
+            </article>
+
+            <article class="service-card" role="listitem">
+              <div class="service-head head-maint"><span class="dot"></span> SERVICE & MAINTENANCE PLANS</div>
+              <div class="service-body">
+                <p class="maint-paragraph">Ensure equipment runs at peak efficiency and output.</p>
+                <ul>
+                  <li>Heating + Cooling</li>
+                  <li>Heat Pump Cleaning</li>
+                  <li>Roof Top (HVAC/ Refrigeration)</li>
+                  <li>Water and Air</li>
+                </ul>
+                <div class="andmore maint" onclick="routeTo('services')">and more...</div>
+              </div>
+            </article>
+          </div>
+
+          <div class="trust">
+            <div class="blurb">
+              <div class="trust-title">Trusted • Certified • Local</div>
+              <div>Licensed professionals delivering dependable installs, repairs, and maintenance for homes and businesses.</div>
+            </div>
+            <div class="trust-logos" aria-hidden="false">
+              <a href="https://www.bbb.org/ca/ns/dartmouth/profile/heating-and-air-conditioning/maritime-hvac-0087-70880"
+                 target="_blank" rel="noreferrer" aria-label="BBB Profile">
+                <img src="https://maritimehvac.ca/wp-content/uploads/2022/06/bbb-logo-1.png" alt="BBB Accredited Business" />
+              </a>
+              <img src="https://maritimehvac.ca/wp-content/uploads/2022/06/red-seal-logo.png" alt="Red Seal" />
+              <img src="https://maritimehvac.ca/wp-content/uploads/2022/05/NSPI-Preferred-Contractor-JPG.png" alt="NS Power Preferred Contractor" />
+            </div>
+          </div>
+
+          <div class="reviews">
+            <div class="review-card" aria-live="polite">
+              <div class="review-header">
+                <div class="review-title">Customer Testimonials</div>
+                <div class="review-controls">
+                  <button id="prevReview" aria-label="Previous review">‹</button>
+                  <button id="nextReview" aria-label="Next review">›</button>
+                </div>
+              </div>
+
+              <div class="quote" id="reviewText">Excellent workmanship and prompt service — highly recommend!</div>
+
+              <div class="reviewer">
+                <div id="reviewName">— Jamie R.</div>
+                <div class="stars" aria-hidden="true">★★★★★</div>
+              </div>
+            </div>
+
+            <div class="cta-panel">
+              <div>
+                <h4>Need service fast?</h4>
+                <p>Book a visit, request an estimate, or ask about financing and warranty options.</p>
+              </div>
+              <div class="cta-actions">
+                <button class="btn btn-primary" onclick="routeTo('book-service')">BOOK SERVICE</button>
+                <button class="btn btn-ghost" onclick="routeTo('contact')">CONTACT US</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </section>
+
+    <!-- SERVICES (page) -->
+    <section class="page" id="page-services" data-page="services" aria-hidden="true">
+      <section class="page-hero"><div class="inner"><h1>Services</h1><p>Heating + Cooling, Electrical, Water + Air Purification, and Service & Maintenance Plans.</p></div></section>
+      <section class="content"><div class="inner">
+        <div class="service-grid">
+          <!-- 4 service cards -->
+          <article class="service-card" role="listitem">
+            <div class="service-head head-heat"><span class="dot"></span> HEATING + COOLING</div>
+            <div class="service-body">
+              <ul>
+                <li>Furnaces</li>
+                <li>Air Conditioners</li>
+                <li>Heat Pumps (Ducted/Ductless)</li>
+                <li>Mini Splits</li>
+                <li>Air Exchangers + Ventilation</li>
+                <li>Heat Recovery</li>
+              </ul>
+              <div class="andmore heat" onclick="routeTo('services')">and more...</div>
+            </div>
+          </article>
+
+          <article class="service-card" role="listitem">
+            <div class="service-head head-elec"><span class="dot"></span> ELECTRICAL</div>
+            <div class="service-body">
+              <ul>
+                <li>Panel Upgrades (100, 200, 400 amp)</li>
+                <li>EV Charging Station Installation</li>
+                <li>Generators (standby/portable)</li>
+                <li>Renovations & Fixtures</li>
+              </ul>
+              <div class="andmore elec" onclick="routeTo('services')">and more...</div>
+            </div>
+          </article>
+
+          <article class="service-card" role="listitem">
+            <div class="service-head head-water"><span class="dot"></span> WATER + AIR SOLUTIONS</div>
+            <div class="service-body">
+              <ul>
+                <li>Hot Water (Tanks/Tankless)</li>
+                <li>Air Purification</li>
+                <li>Water Treatment & Purification</li>
+                <li>Humidifiers</li>
+              </ul>
+              <div class="andmore water" onclick="routeTo('services')">and more...</div>
+            </div>
+          </article>
+
+          <article class="service-card" role="listitem">
+            <div class="service-head head-maint"><span class="dot"></span> SERVICE & MAINTENANCE PLANS</div>
+            <div class="service-body">
+              <p class="maint-paragraph">Ensure equipment runs at peak efficiency and output.</p>
+              <ul>
+                <li>Heating + Cooling</li>
+                <li>Heat Pump Cleaning</li>
+                <li>Roof Top (HVAC/ Refrigeration)</li>
+                <li>Water and Air</li>
+              </ul>
+              <div class="andmore maint" onclick="routeTo('services')">and more...</div>
+            </div>
+          </article>
+        </div>
+
+        <div class="trust trust-tight">
+          <div class="blurb"><div class="trust-title">Certifications & Partners</div><div>BBB Accredited • Red Seal • Nova Scotia Power Preferred Contractor</div></div>
+          <div class="trust-logos">
+            <a href="https://www.bbb.org/ca/ns/dartmouth/profile/heating-and-air-conditioning/maritime-hvac-0087-70880" target="_blank" rel="noreferrer"><img src="https://maritimehvac.ca/wp-content/uploads/2022/06/bbb-logo-1.png" alt="BBB Accredited Business" /></a>
+            <img src="https://maritimehvac.ca/wp-content/uploads/2022/06/red-seal-logo.png" alt="Red Seal" />
+            <img src="https://maritimehvac.ca/wp-content/uploads/2022/05/NSPI-Preferred-Contractor-JPG.png" alt="NS Power Preferred Contractor" />
+          </div>
+
+          <div class="btn-row">
+            <button class="btn btn-primary" onclick="routeTo('book-service')">BOOK SERVICE</button>
+            <button class="btn btn-ghost" onclick="routeTo('book-installers')">BOOK INSTALLERS</button>
+          </div>
+        </div>
+      </div></section>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="page" id="page-about" data-page="about" aria-hidden="true">
+      <section class="page-hero"><div class="inner"><h1>About</h1><p>Local, reliable service for Maritime homes and businesses.</p></div></section>
+      <section class="content"><div class="inner">
+        <div class="grid2">
+          <div class="panel">
+            <h3>What we do</h3>
+            <p>We provide heating + cooling, electrical services, and water + air purification solutions—plus service and maintenance plans.</p>
+            <ul><li>Residential & Commercial</li><li>Installations, upgrades, repairs</li><li>Maintenance plans & preventative care</li></ul>
+          </div>
+          <div class="panel">
+            <h3>Why Maritime HVAC</h3>
+            <p>Certified professionals. Clean workmanship. Clear communication.</p>
+            <ul><li>BBB Accredited</li><li>Red Seal</li><li>NS Power Preferred Contractor</li></ul>
+          </div>
+        </div>
+
+        <div class="panel panel-margin"><h3>Our address</h3><p><strong>2 Ralston Ave suite 100, Dartmouth, NS B3B 1H7</strong></p></div>
+      </div></section>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="page" id="page-contact" data-page="contact" aria-hidden="true">
+      <section class="page-hero"><div class="inner"><h1>Contact</h1><p>Request service, ask about a project, or get help with financing and warranties.</p></div></section>
+      <section class="content"><div class="inner">
+        <div class="grid2">
+          <div class="panel">
+            <h3>Contact info</h3>
+            <p><strong>Phone:</strong> 902-414-6000</p>
+            <p><strong>Email:</strong> info@maritimehvac.ca</p>
+            <p class="addr"><strong>Address:</strong><br/>2 Ralston Ave suite 100, Dartmouth, NS B3B 1H7</p>
+            <div class="btn-row"><button class="btn btn-primary" onclick="routeTo('book-service')">BOOK SERVICE</button><button class="btn btn-ghost" onclick="routeTo('book-installers')">BOOK INSTALLERS</button></div>
+          </div>
+
+          <div class="panel">
+            <h3>Quick request form</h3>
+            <form id="contact-form" onsubmit="event.preventDefault(); alert('Form submitted (connect to your booking form).');">
+              <div class="form">
+                <input class="input" placeholder="Name" required />
+                <input class="input" placeholder="Phone" required />
+                <input class="input" placeholder="Email" required />
+                <select class="input" required>
+                  <option value="" disabled selected>What can we help you with?</option>
+                  <option>Heating + Cooling</option>
+                  <option>Electrical</option>
+                  <option>Water + Air Solutions</option>
+                  <option>Service & Maintenance Plans</option>
+                </select>
+                <textarea class="input" placeholder="Message" rows="4"></textarea>
+                <button class="btn btn-primary" type="submit">SUBMIT</button>
+              </div>
+            </form>
+          </div>
+        </div>
+
+        <div class="trust trust-tight">
+          <div class="blurb"><div class="trust-title">Verified & Accredited</div><div>BBB profile available online.</div></div>
+          <div class="trust-logos"><a href="https://www.bbb.org/ca/ns/dartmouth/profile/heating-and-air-conditioning/maritime-hvac-0087-70880" target="_blank" rel="noreferrer"><img src="https://maritimehvac.ca/wp-content/uploads/2022/06/bbb-logo-1.png" alt="BBB Accredited Business" /></a></div>
+        </div>
+      </div></section>
+    </section>
+
+    <!-- FINANCING -->
+    <section class="page" id="page-financing" data-page="financing" aria-hidden="true">
+      <section class="page-hero"><div class="inner"><h1>Financing</h1><p>Add your financing application link or GoHighLevel form here.</p></div></section>
+      <section class="content"><div class="inner"><div class="panel"><h3>Apply for financing</h3><p>Replace this copy with your financing details + application embed.</p><div class="btn-row"><button class="btn btn-primary" onclick="routeTo('book-service')">TALK TO US</button><button class="btn btn-ghost" onclick="alert('Replace with your financing link / GHL form embed.')">APPLY NOW</button></div></div></div></section>
+    </section>
+
+    <!-- CAREERS -->
+    <section class="page" id="page-careers" data-page="careers" aria-hidden="true">
+      <section class="page-hero"><div class="inner"><h1>Careers</h1><p>Add jobs / careers form here.</p></div></section>
+      <section class="content"><div class="inner"><div class="grid2"><div class="panel"><h3>Open roles</h3><ul><li>HVAC Technician</li><li>Electrician / Apprentice</li><li>Installer</li><li>Service Coordinator</li></ul></div><div class="panel"><h3>Apply</h3><p>Add your careers form embed here.</p><button class="btn btn-primary" onclick="alert('Add careers form.')">APPLY</button></div></div></div></section>
+    </section>
+
+    <!-- WARRANTY -->
+    <section class="page" id="page-warranty" data-page="warranty" aria-hidden="true">
+      <section class="page-hero"><div class="inner"><h1>Warranty</h1><p>Warranty registration and lookup links by brand.</p></div></section>
+      <section class="content"><div class="inner">
+        <div class="panel">
+          <h3>Warranty links by brand</h3>
+          <div class="warranty-grid">
+            <!-- Example warranty cards -->
+            <div class="wcard"><div class="top"><span>American Standard</span><span>›</span></div><a href="https://www.americanstandardair.com/resources/warranty-and-registration/" target="_blank" rel="noreferrer">Warranty + Registration ↗</a></div>
+            <div class="wcard"><div class="top"><span>Carrier</span><span>›</span></div><a href="https://www.carrier.com" target="_blank" rel="noreferrer">Warranty Lookup ↗</a></div>
+          </div>
+          <div class="btn-row mt14"><button class="btn btn-primary" onclick="routeTo('book-service')">NEED HELP? BOOK SERVICE</button><button class="btn btn-ghost" onclick="routeTo('contact')">CONTACT US</button></div>
+        </div>
+      </div></section>
+    </section>
+
+    <!-- BOOK SERVICE -->
+    <section class="page" id="page-book-service" data-page="book-service" aria-hidden="true">
+      <section class="page-hero"><div class="inner"><h1>Book Service</h1><p>Paste your GoHighLevel calendar widget or embed code here.</p></div></section>
+      <section class="content"><div class="inner"><div class="panel"><h3>Service booking</h3><p>Replace the button with a GoHighLevel Calendar embed in this section.</p><div class="btn-row"><button class="btn btn-primary" onclick="alert('Replace with GoHighLevel Calendar embed.')">OPEN BOOKING</button></div></div></div></section>
+    </section>
+
+    <!-- BOOK INSTALLERS -->
+    <section class="page" id="page-book-installers" data-page="book-installers" aria-hidden="true">
+      <section class="page-hero"><div class="inner"><h1>Book Installers</h1><p>Use this for install consults, quotes, and planning appointments.</p></div></section>
+      <section class="content"><div class="inner"><div class="panel"><h3>Installer booking</h3><p>Replace the button with your installer estimate calendar embed.</p><div class="btn-row"><button class="btn btn-primary" onclick="alert('Replace with GoHighLevel Installer Calendar embed.')">REQUEST INSTALL</button></div></div></div></section>
+    </section>
+  </main>
+
+  <footer>
+    <div class="inner footer-inner">
+      <div class="fine">
+        <strong>Maritime HVAC</strong><br/>
+        2 Ralston Ave suite 100, Dartmouth, NS B3B 1H7<br/>
+        Phone: <a href="tel:9024146000">902-414-6000</a> • Email: <a href="mailto:info@maritimehvac.ca">info@maritimehvac.ca</a>
+      </div>
+      <div class="fine">© <span id="year"></span> Maritime HVAC. All rights reserved.</div>
+    </div>
+  </footer>
+
+  <script src="01-partials/script.js" defer></script>
+</body>
+</html>
