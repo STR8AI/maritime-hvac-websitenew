@@ -30,9 +30,9 @@ document.addEventListener('DOMContentLoaded', () => {
       const panel = document.getElementById(`panel-${panelId}`);
       if (panel) {
         // Hide all panels
-        panels.forEach(p => p.style.display = 'none');
+        panels.forEach(p => p.classList.remove('active'));
         // Show the selected panel
-        panel.style.display = 'block';
+        panel.classList.add('active');
         // Scroll to the panel
         panel.scrollIntoView({ behavior: 'smooth', block: 'start' });
       }
@@ -43,7 +43,7 @@ document.addEventListener('DOMContentLoaded', () => {
     button.addEventListener('click', () => {
       const panel = button.closest('.panel');
       if (panel) {
-        panel.style.display = 'none';
+        panel.classList.remove('active');
       }
     });
   });
