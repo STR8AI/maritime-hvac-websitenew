@@ -347,22 +347,15 @@
 
             <div class="box">
               <h5>Quick form</h5>
-              <form id="contact-form" onsubmit="event.preventDefault(); alert('Thanks! This demo form is ready to connect to your booking system.');">
-                <label class="sr-only" for="name">Name</label>
-                <input id="name" name="name" required placeholder="Name" style="width:100%;padding:12px;border-radius:12px;border:1px solid var(--border);margin-bottom:10px;font:inherit;">
-                <label class="sr-only" for="phone">Phone</label>
-                <input id="phone" name="phone" required placeholder="Phone" style="width:100%;padding:12px;border-radius:12px;border:1px solid var(--border);margin-bottom:10px;font:inherit;">
-                <label class="sr-only" for="offering">Offering</label>
-                <select id="offering" name="offering" style="width:100%;padding:12px;border-radius:12px;border:1px solid var(--border);margin-bottom:10px;font:inherit;">
-                  <option>Heating + Cooling</option>
-                  <option>Electrical</option>
-                  <option>Water + Air Solutions</option>
-                  <option>Service & Maintenance Plans</option>
-                </select>
-                <label class="sr-only" for="msg">Message</label>
-                <textarea id="msg" name="msg" placeholder="What can we help you with?" rows="4" style="width:100%;padding:12px;border-radius:12px;border:1px solid var(--border);margin-bottom:12px;font:inherit;"></textarea>
-                <button class="btn-sm primary" type="submit" style="width:100%;">Submit Request</button>
-              </form>
+                <!-- START GHL FORM IFRAME (example) -->
+                <iframe
+                  src="https://your-ghl-domain.gohighlevel.com/embed/form/PASTE_FORM_ID_HERE"
+                  title="Request Service"
+                  style="width:100%;min-height:560px;border:0;"
+                  loading="lazy"
+                  referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+                <!-- END GHL FORM IFRAME -->
             </div>
           </div>
         </div>

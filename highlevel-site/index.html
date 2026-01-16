@@ -17,6 +17,10 @@
   <link rel="stylesheet" href="00-global/styles.css" />
 </head>
 <body>
+  <!-- Maritime Logo outside header -->
+  <div class="outside-logo-wrap">
+    <img class="outside-logo" src="https://storage.googleapis.com/msgsndr/ISncZYLu2hGulBBFoZtW/media/696a6ba94e42b97e3d3757b8.png" alt="Maritime HVAC Logo" />
+  </div>
   <!-- =========================
        BODY TRACKING CODE (PASTE HERE)
        ========================= -->
@@ -40,7 +44,7 @@
   <header class="site-header" role="banner">
     <div class="nav">
       <div class="brand">
-        <img class="brand-logo" src="YOUR_LOGO_IMAGE_URL_HERE" alt="Maritime HVAC logo" />
+        <img class="brand-logo" src="https://storage.googleapis.com/msgsndr/ISncZYLu2hGulBBFoZtW/media/696a6ba94e42b97e3d3757b8.png" alt="Maritime HVAC logo" />
         <div class="brand-text">
           <strong>Maritime HVAC</strong>
         </div>
@@ -84,7 +88,7 @@
     <!-- HOME -->
     <section class="page active" id="page-home" data-page="home" aria-hidden="false">
       <section class="hero" aria-label="Home hero">
-        <div class="hero-bg" style="background-image:url('YOUR_HERO_BACKGROUND_IMAGE_URL_HERE');"></div>
+        <div class="hero-bg" style="background-image:url('04-assets/images/other/peggys-cove.jpg');"></div>
 
         <svg class="hero-wave" viewBox="0 0 1200 120" preserveAspectRatio="none" aria-hidden="true">
           <path d="M0,64 C240,110 360,10 600,56 C840,100 960,22 1200,60 L1200,0 L0,0 Z" fill="rgba(255,255,255,.84)"></path>
@@ -108,7 +112,7 @@
           </div>
 
           <div class="hero-right">
-            <img class="person" src="YOUR_TROY_PHOTO_URL_HERE" alt="Maritime HVAC technician" />
+            <img class="person" src="https://storage.googleapis.com/msgsndr/ISncZYLu2hGulBBFoZtW/media/696a6ba94e42b97e3d3757b8.png" alt="Maritime HVAC technician Troy" />
             <div class="van-badge" aria-hidden="true">
               <div class="badge-title">MARITIME HVAC</div>
               <div class="mini">Local • Trusted • Certified</div>
@@ -402,7 +406,11 @@
     <!-- BOOK SERVICE -->
     <section class="page" id="page-book-service" data-page="book-service" aria-hidden="true">
       <section class="page-hero"><div class="inner"><h1>Book Service</h1><p>Paste your GoHighLevel calendar widget or embed code here.</p></div></section>
-      <section class="content"><div class="inner"><div class="panel"><h3>Service booking</h3><p>Replace the button with a GoHighLevel Calendar embed in this section.</p><div class="btn-row"><button class="btn btn-primary" onclick="alert('Replace with GoHighLevel Calendar embed.')">OPEN BOOKING</button></div></div></div></section>
+      <section class="content"><div class="inner"><div class="panel"><h3>Service booking</h3><p>Replace the button with a GoHighLevel Calendar embed in this section.</p>
+        <div id="ghl-calendar">
+          <!-- Paste GHL calendar embed script/iframe here -->
+        </div>
+      </div></div></section>
     </section>
 
     <!-- BOOK INSTALLERS -->
