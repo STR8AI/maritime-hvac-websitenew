@@ -181,18 +181,28 @@ body {
   height: 520px;
 }
 
-.hero-person {
-  width: 360px;
-  border-radius: 14px;
-  box-shadow: 0 22px 40px rgba(0,0,0,0.45);
-  transform: rotate(-1deg);
-  display: block;
-  object-fit: cover;
-  z-index: 4;
-  border: 6px solid rgba(255,255,255,0.06);
+.person-wrap {
+  position: absolute;
+  right: -18px;
+  bottom: 0;
+  width: 540px;
+  height: 520px;
+  overflow: hidden;
+  z-index: 30;
 }
 
-.hero-van {
+.person {
+  position: absolute;
+  right: -360px;    /* tuned for your PNG */
+  bottom: -12px;
+  height: 760px;
+  width: auto;
+  object-fit: cover;
+  z-index: 31;
+  filter: drop-shadow(0 18px 40px rgba(0,0,0,0.45));
+}
+
+.van {
   position: absolute;
   right: 18px;
   bottom: 6px;

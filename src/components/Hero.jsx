@@ -29,14 +29,16 @@ export default function Hero({ onOpenBooking }) {
         </div>
 
         <div className="hero-visual">
-          <img
-            src="/assets/hero-person.png"
-            className="hero-person"
-            alt="Maritime HVAC Owner"
-          />
+          <div className="person-wrap">
+            <img
+              src="/assets/hero-person.png"
+              className="person"
+              alt="Maritime HVAC Owner"
+            />
+          </div>
           <img
             src="/assets/van.png"
-            className="hero-van"
+            className="van"
             alt="Maritime HVAC Van"
           />
         </div>
