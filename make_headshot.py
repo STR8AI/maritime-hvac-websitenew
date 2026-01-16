@@ -141,7 +141,7 @@ def process_image(infile, out1='maritime-headshot-hero.png', out2='maritime-head
     pil_rgba = pil_rgba.resize((size_2x, size_2x), Image.LANCZOS)
 
     # 8) circular mask with feather
-    circle = rounded_mask(size_2x, radius=size_2x//2)
+    circle = rounded_mask(size_2x, radius=int(size_2x*0.18))  # rounded rect
     circle = circle.filter(ImageFilter.GaussianBlur(radius=6))
     # multiply alpha with circle
     a = pil_rgba.split()[-1]
