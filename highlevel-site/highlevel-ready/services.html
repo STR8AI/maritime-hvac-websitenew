@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Services — Maritime HVAC</title>
+  <meta name="description" content="Services offered by Maritime HVAC" />
+  <link rel="icon" href="../04-assets/images/other/favicon.svg" />
+  <link rel="stylesheet" href="styles.css" />
+  <meta name="ghl-assets" content="" />
+  <script>
+    (function(){
+      try{var meta=document.querySelector('meta[name="ghl-assets"]');if(!meta)return;var base=(meta.content||'').trim();if(!base)return;function basename(p){return p.split('/').pop().split('?')[0].split('#')[0]}document.addEventListener('DOMContentLoaded',function(){document.querySelectorAll('img').forEach(function(img){var s=img.getAttribute('src')||'';if(s.indexOf('../04-assets/images/other/')===0)img.src=base+'/'+basename(s)});document.querySelectorAll('.hero-bg').forEach(function(el){var style=el.style.backgroundImage||getComputedStyle(el).backgroundImage||'';var m=style.match(/url\(["']?(.*?)["']?\)/);if(m&&m[1].indexOf('../04-assets/images/other/')===0)el.style.backgroundImage="url('"+base+'/'+basename(m[1])+"')"})})}catch(e){console.warn(e)}})();
+  </script>
+</head>
+<body>
+  <header class="hl-header">
+    <div class="brand"><a href="index.html"><img class="brand-logo" src="../04-assets/images/other/logo.png" alt="logo"/></a><div class="brand-text">Maritime HVAC</div></div>
+    <nav class="hl-nav"><a href="index.html">Home</a><a class="active" href="services.html">Services</a><a href="about.html">About</a><a href="contact.html">Contact</a></nav>
+    <div class="hl-cta"><a class="btn-primary" href="booking.html">Request Service</a></div>
+  </header>
+
+  <main>
+    <section class="hero"><div class="hero-bg" style="background-image:url('../04-assets/images/other/peggys-cove.jpg')"></div>
+      <div class="hero-inner wrap">
+        <div class="hero-left">
+          <h1>Our Services</h1>
+          <p class="hero-copy">We provide comprehensive heating, cooling, electrical, and water & air solutions for residential and commercial clients.</p>
+        </div>
+        <div class="hero-visuals"><img class="hero-tech" src="../04-assets/images/other/technician.png" alt="tech"><img class="hero-van" src="../04-assets/images/other/van.png" alt="van"></div>
+      </div>
+    </section>
+
+    <section class="features wrap">
+      <div class="grid">
+        <div class="card">Furnaces & Heat Pumps</div>
+        <div class="card">Air Conditioning</div>
+        <div class="card">Electrical Services</div>
+        <div class="card">Water Treatment & Air Quality</div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="hl-footer">© <span id="year"></span> Maritime HVAC</footer>
+  <script>document.getElementById('year').textContent=new Date().getFullYear();</script>
+</body>
+</html>

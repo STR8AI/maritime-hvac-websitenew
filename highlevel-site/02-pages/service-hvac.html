@@ -1,42 +1,71 @@
-<!-- Header / Nav -->
-<header class="topbar">
-  <div class="topbar-inner">
-    <!-- Logo -->
-    <a class="brand" href="#home">
-      <img class="brand-logo"
-           src="https://storage.googleapis.com/msgsndr/ISncZYLu2hGulBBFoZtW/media/6969437e4e42b939a6f67d96.png"
-           alt="Maritime HVAC" />
-    </a>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Maritime HVAC — Service Detail</title>
+  <meta name="description" content="Service details for Maritime HVAC." />
 
-    <!-- Navigation links -->
-    <nav class="nav-links">
-      <a href="#home">Home</a>
-      <a href="#services">Services</a>
-      <a href="#about">About</a>
-      <a href="#contact">Contact</a>
-    </nav>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-    <!-- Call-to-action button -->
-    <a class="topbar-cta" href="#booking">Request Service</a>
-  </div>
-</header>
+  <link rel="stylesheet" href="../00-global/styles.css">
+</head>
+<body>
+  <header class="nav" role="banner">
+    <div class="wrap nav-inner" aria-label="Main navigation">
+      <a class="brand" href="#top" aria-label="Go to top">
+        <span class="brand-badge" aria-hidden="true">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M12 2l3 4H9l3-4Z" fill="rgba(255,255,255,.95)"/>
+            <path d="M10 6h4l1 16H9l1-16Z" fill="rgba(255,255,255,.75)"/>
+            <path d="M5 21h14" stroke="rgba(255,255,255,.9)" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </span>
+        <span>Maritime HVAC</span>
+      </a>
 
-<!-- Single service detail shell -->
-<div class="mh-site">
-<section class="section" id="service">
-  <div class="card" style="padding:24px;">
-    <h1>Service Title</h1>
-    <p class="service-desc">Short intro describing the HVAC service, its benefits, and who it is for.</p>
-    <img class="service-image" src="https://storage.googleapis.com/msgsndr/ISncZYLu2hGulBBFoZtW/media/693873c2578cc70a2abe190e.png" alt="Service" />
-    <div style="margin-top:16px; display:grid; gap:12px;">
-      <div><strong>What you get</strong><br />Sized, installed, and commissioned for Maritime weather.</div>
-      <div><strong>Timeline</strong><br />Typical install: 1–3 days.</div>
-      <div><strong>Warranty</strong><br />Manufacturer warranty plus workmanship guarantee.</div>
+      <nav class="nav-links" aria-label="Primary navigation">
+        <a href="../02-pages/services.html">Services</a>
+        <a href="../02-pages/service-hvac.html">Details</a>
+        <a href="../02-pages/contact.html">Contact</a>
+        <a class="btn btn-primary" href="../02-pages/booking.html" aria-label="Request service">Request Service</a>
+      </nav>
     </div>
-    <div style="margin-top:18px; display:flex; gap:12px; flex-wrap:wrap;">
-      <a class="button-primary" href="#booking">Book Now</a>
-      <a class="button-primary" style="background: rgba(255,255,255,0.10); color:#fff;" href="#contact">Talk to an expert</a>
+  </header>
+
+  <main role="main">
+    <section class="section" id="service">
+      <div class="wrap">
+        <div class="card" style="padding:24px;">
+          <h1>Service Title</h1>
+          <p class="service-desc">Short intro describing the HVAC service, its benefits, and who it is for.</p>
+          <img class="service-image" src="https://storage.googleapis.com/msgsndr/ISncZYLu2hGulBBFoZtW/media/693873c2578cc70a2abe190e.png" alt="Service" style="max-width:420px;width:100%;border-radius:12px;margin-top:12px;" />
+          <div style="margin-top:16px; display:grid; gap:12px;">
+            <div><strong>What you get</strong><br />Sized, installed, and commissioned for Maritime weather.</div>
+            <div><strong>Timeline</strong><br />Typical install: 1–3 days.</div>
+            <div><strong>Warranty</strong><br />Manufacturer warranty plus workmanship guarantee.</div>
+          </div>
+          <div style="margin-top:18px; display:flex; gap:12px; flex-wrap:wrap;">
+            <a class="btn btn-primary" href="../02-pages/booking.html">Book Now</a>
+            <a class="btn" style="background: rgba(255,255,255,0.10); color:#fff;" href="../02-pages/contact.html">Talk to an expert</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer role="contentinfo">
+    <div class="wrap foot">
+      <div>© <span id="year"></span> Maritime HVAC • Service</div>
+      <div>
+        <a href="../02-pages/services.html">Services</a> &nbsp;•&nbsp;
+        <a href="../02-pages/contact.html">Request Service</a>
+      </div>
     </div>
-  </div>
-</section>
-</div>
+  </footer>
+
+  <script src="../01-partials/scripts.js" defer></script>
+</body>
+</html>
