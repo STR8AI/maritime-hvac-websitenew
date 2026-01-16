@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Maritime HVAC — Home</title>
+  <meta name="description" content="Maritime HVAC — Reliable heating, cooling, electrical services" />
+  <link rel="icon" href="../04-assets/images/other/favicon.svg" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main>
+    <header class="hl-header">
+      <div class="brand">
+        <!-- Replace src values with your GHL-hosted asset URLs if needed -->
+        <img class="brand-logo" src="../04-assets/images/other/logo.png" alt="Maritime HVAC logo" />
+        <div class="brand-text">Maritime HVAC</div>
+      </div>
+      <nav class="hl-nav">
+        <a href="#home" class="active">Home</a>
+        <a href="#services">Services</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <div class="hl-cta"><a class="btn-primary" href="#book">Request Service</a></div>
+    </header>
+
+    <section class="hero" id="home" aria-label="Home hero">
+      <div class="hero-bg" style="background-image:url('../04-assets/images/other/peggys-cove.jpg');"></div>
+      <div class="hero-inner">
+        <div class="hero-left">
+          <h1>Reliable Heating & Cooling for Atlantic Canada</h1>
+          <p class="hero-subline">Serving Halifax, Dartmouth, Bedford, Sackville, and beyond</p>
+          <p class="hero-copy">From heat pumps to electrical, water, and air solutions — expert service across the Maritimes.</p>
+          <a class="hero-cta" href="#book">Book Now</a>
+        </div>
+        <div class="hero-visuals">
+          <img class="hero-tech" src="../04-assets/images/other/technician.png" alt="Technician on rocks" />
+          <img class="hero-van" src="../04-assets/images/other/van.png" alt="Service van" />
+        </div>
+      </div>
+    </section>
+
+    <section class="features">
+      <div class="wrap">
+        <h2>What we do</h2>
+        <div class="grid">
+          <div class="card">Heating &amp; Cooling</div>
+          <div class="card">Electrical</div>
+          <div class="card">Water &amp; Air</div>
+          <div class="card">Service Plans</div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="hl-footer">
+      <div class="wrap">© <span id="year"></span> Maritime HVAC — <a href="tel:9024146000">902-414-6000</a></div>
+    </footer>
+  </main>
+
+  <script>
+    // small runtime: update year
+    document.addEventListener('DOMContentLoaded', function(){ document.getElementById('year').textContent = new Date().getFullYear(); });
+  </script>
+</body>
+</html>
