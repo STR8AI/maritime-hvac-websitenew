@@ -1,0 +1,6 @@
+/* Wrapper stylesheet for Cloudflare Pages
+   Imports the global site styles so `styles.css` exists at the site root. */
+@import url('00-global/styles.css');
+
+/* Small override to ensure body background behaves when served from Pages */
+html,body{height:100%;}
