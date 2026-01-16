@@ -65,11 +65,11 @@ def color_match_pil(pil_rgb):
     # Apply slight cooling, less saturation, a touch of contrast & brightness
     arr = np.array(pil_rgb).astype(np.float32)
     # cool the image: slightly reduce red, increase blue
-    arr[:,:,0] = arr[:,:,0] * 0.95   # R
-    arr[:,:,2] = arr[:,:,2] * 1.05   # B
+    arr[:,:,0] *= 0.92   # reduce red
+    arr[:,:,2] *= 1.08   # increase blue
     arr = np.clip(arr, 0, 255).astype(np.uint8)
     pil = Image.fromarray(arr)
-    pil = ImageEnhance.Color(pil).enhance(0.92)     # desaturate a bit
+    pil = ImageEnhance.Color(pil).enhance(0.88)     # desaturate a bit
     pil = ImageEnhance.Contrast(pil).enhance(1.05)  # small contrast boost
     pil = ImageEnhance.Brightness(pil).enhance(1.03) # slight brighten
     return pil
@@ -142,7 +142,7 @@ def process_image(infile, out1='maritime-headshot-hero.png', out2='maritime-head
 
     # 8) circular mask with feather
     circle = rounded_mask(size_2x, radius=size_2x//2)
-    circle = circle.filter(ImageFilter.GaussianBlur(radius=20))
+    circle = circle.filter(ImageFilter.GaussianBlur(radius=6))
     # multiply alpha with circle
     a = pil_rgba.split()[-1]
     a = ImageChops.multiply(a, circle)
