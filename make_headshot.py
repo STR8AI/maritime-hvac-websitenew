@@ -142,7 +142,7 @@ def process_image(infile, out1='maritime-headshot-hero.png', out2='maritime-head
 
     # 8) circular mask with feather
     circle = rounded_mask(size_2x, radius=size_2x//2)
-    circle = circle.filter(ImageFilter.GaussianBlur(radius=12))
+    circle = circle.filter(ImageFilter.GaussianBlur(radius=20))
     # multiply alpha with circle
     a = pil_rgba.split()[-1]
     a = ImageChops.multiply(a, circle)
