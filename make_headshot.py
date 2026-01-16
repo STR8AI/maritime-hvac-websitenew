@@ -15,7 +15,7 @@ import cv2
 import numpy as np
 from PIL import Image, ImageFilter, ImageEnhance, ImageChops, ImageDraw
 
-def grabcut_mask(img_rgb, iter_count=5):
+def grabcut_mask(img_rgb, iter_count=7):
     h,w = img_rgb.shape[:2]
     mask = np.zeros((h,w), np.uint8)
     # generous rect around center (adjust if your subject is at edge)
@@ -25,7 +25,7 @@ def grabcut_mask(img_rgb, iter_count=5):
     cv2.grabCut(img_rgb, mask, rect, bgdModel, fgdModel, iter_count, cv2.GC_INIT_WITH_RECT)
     mask2 = np.where((mask==2)|(mask==0), 0, 1).astype('uint8')
     # clean up with morphological ops
-    kernel = np.ones((5,5), np.uint8)
+    kernel = np.ones((7,7), np.uint8)
     mask2 = cv2.morphologyEx(mask2, cv2.MORPH_CLOSE, kernel, iterations=2)
     mask2 = cv2.morphologyEx(mask2, cv2.MORPH_OPEN, kernel, iterations=1)
     return mask2
@@ -105,7 +105,7 @@ def process_image(infile, out1='maritime-headshot-hero.png', out2='maritime-head
     h,w = rgb.shape[:2]
 
     # 1) extract subject mask with GrabCut
-    mask = grabcut_mask(rgb, iter_count=5)
+    mask = grabcut_mask(rgb, iter_count=7)
 
     # 2) feather mask (adaptive radius)
     radius = max(8, int(min(w,h) / 100.0))  # ~12 at typical full-res
