@@ -62,14 +62,14 @@ def crop_to_square_around_subject(rgba_np, alpha_mask, pad_factor=1.4):
     return rgba_np[y0:y1, x0:x1].copy()
 
 def color_match_pil(pil_rgb):
-    # Apply slight cooling, less saturation, a touch of contrast & brightness
+    # Apply slight warming, less saturation, a touch of contrast & brightness
     arr = np.array(pil_rgb).astype(np.float32)
-    # cool the image: slightly reduce red, increase blue
-    arr[:,:,0] *= 0.92   # reduce red
-    arr[:,:,2] *= 1.08   # increase blue
+    # warm the image: slightly increase red, reduce blue
+    arr[:,:,0] *= 1.05
+    arr[:,:,2] *= 0.98
     arr = np.clip(arr, 0, 255).astype(np.uint8)
     pil = Image.fromarray(arr)
-    pil = ImageEnhance.Color(pil).enhance(0.88)     # desaturate a bit
+    pil = ImageEnhance.Color(pil).enhance(1.00)     # no desaturation
     pil = ImageEnhance.Contrast(pil).enhance(1.05)  # small contrast boost
     pil = ImageEnhance.Brightness(pil).enhance(1.03) # slight brighten
     return pil
