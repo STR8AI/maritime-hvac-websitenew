@@ -4,8 +4,36 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Maritime HVAC — Home</title>
-  <meta name="description" content="Maritime HVAC — Reliable heating, cooling, electrical services" />
+  <meta name="description" content="Maritime HVAC provides expert heating, cooling, electrical, water, and air solutions for Halifax, Dartmouth, Bedford, Sackville, and all of Atlantic Canada. Call 902-414-6000 or email info@maritimehvac.ca for reliable service." />
   <link rel="icon" href="../04-assets/images/other/favicon.svg" />
+  <!-- Open Graph image for social sharing -->
+  <meta property="og:image" content="../04-assets/images/other/peggys-cove.jpg" />
+  <meta property="og:image:alt" content="Maritime HVAC service van at Peggy's Cove, Nova Scotia" />
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "Maritime HVAC",
+      "image": "https://maritimehvac.ca/assets/images/other/peggys-cove.jpg",
+      "@id": "https://maritimehvac.ca/",
+      "url": "https://maritimehvac.ca/",
+      "telephone": "+1-902-414-6000",
+      "email": "info@maritimehvac.ca",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Halifax",
+        "addressRegion": "NS",
+        "addressCountry": "CA"
+      },
+      "description": "Maritime HVAC provides expert heating, cooling, electrical, water, and air solutions for Halifax, Dartmouth, Bedford, Sackville, and all of Atlantic Canada.",
+      "sameAs": [
+        "https://www.facebook.com/MaritimeHVAC",
+        "https://www.instagram.com/MaritimeHVAC"
+      ]
+    }
+    </script>
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
   <link rel="stylesheet" href="styles.css" />
   <!-- Set this meta tag to your GoHighLevel asset base URL (no trailing slash), e.g.
        https://assets.gohighlevel.com/your-account-id/uploads
@@ -33,12 +61,11 @@
             }
           });
 
-          // Update background-image inline styles (hero-bg)
-          document.querySelectorAll('.hero-bg').forEach(function(el){
-            var style = el.style.backgroundImage || getComputedStyle(el).backgroundImage || '';
-            var m = style.match(/url\(["']?(.*?)["']?\)/);
-            if(m && m[1].indexOf('../04-assets/images/other/') === 0){
-              el.style.backgroundImage = "url('" + base + '/' + basename(m[1]) + "')";
+          // Update backgrounds marked with data-ghl-asset (e.g., hero overlays)
+          document.querySelectorAll('[data-ghl-asset]').forEach(function(el){
+            var asset = (el.getAttribute('data-ghl-asset') || '').trim();
+            if(asset){
+              el.style.backgroundImage = "url('" + base + '/' + asset + "')";
             }
           });
         });
@@ -51,7 +78,7 @@
     <header class="hl-header">
       <div class="brand">
         <!-- Replace src values with your GHL-hosted asset URLs if needed -->
-        <img class="brand-logo" src="../04-assets/images/other/logo.png" alt="Maritime HVAC logo" />
+        <img class="brand-logo" src="../04-assets/images/other/logo.png" alt="Maritime HVAC logo, heating and cooling experts in Nova Scotia" />
         <div class="brand-text">Maritime HVAC</div>
       </div>
       <nav class="hl-nav">
@@ -64,19 +91,20 @@
     </header>
 
     <section class="hero" id="home" aria-label="Home hero">
-      <div class="hero-bg" style="background-image:url('../04-assets/images/other/peggys-cove.jpg');"></div>
+      <div class="hero-bg" data-ghl-asset="hero-bg.jpg"></div>
+      <div class="hero-overlay" data-ghl-asset="hero-overlay.png"></div>
       <div class="hero-inner">
-        <div class="hero-left">
-          <h1>Reliable Heating & Cooling for Atlantic Canada</h1>
-          <p class="hero-subline">Serving Halifax, Dartmouth, Bedford, Sackville, and beyond</p>
-          <p class="hero-copy">From heat pumps to electrical, water, and air solutions — expert service across the Maritimes.</p>
-          <a class="hero-cta" href="#book">Book Now</a>
+          <div class="hero-left">
+            <h1>Reliable Heating & Cooling for Atlantic Canada</h1>
+            <p class="hero-subline">Serving Halifax, Dartmouth, Bedford, Sackville, and beyond</p>
+            <p class="hero-copy">From heat pumps to electrical, water, and air solutions — expert service across the Maritimes.</p>
+            <a class="hero-cta" href="#book">Book Now</a>
+          </div>
+          <div class="hero-visuals">
+            <img class="hero-tech" src="assets/images/other/placeholder-tech.svg" alt="Technician placeholder" />
+            <img class="hero-van" src="assets/images/other/placeholder-van.svg" alt="Van placeholder" />
+          </div>
         </div>
-        <div class="hero-visuals">
-          <img class="hero-tech" src="../04-assets/images/other/technician.png" alt="Technician on rocks" />
-          <img class="hero-van" src="../04-assets/images/other/van.png" alt="Service van" />
-        </div>
-      </div>
     </section>
 
     <section class="features">
@@ -92,7 +120,7 @@
     </section>
 
     <footer class="hl-footer">
-      <div class="wrap">© <span id="year"></span> Maritime HVAC — <a href="tel:9024146000">902-414-6000</a></div>
+      <div class="wrap">© <span id="year"></span> Maritime HVAC — <a href="tel:9024146000">902-414-6000</a> • <a href="mailto:info@maritimehvac.ca">info@maritimehvac.ca</a></div>
     </footer>
   </main>
 

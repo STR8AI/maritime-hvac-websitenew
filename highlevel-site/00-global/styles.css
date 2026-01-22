@@ -1,3 +1,113 @@
+/* ===== TOP HEADER ===== */
+.top-header {
+  position: absolute;          /* sits on top of hero image */
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 999;
+  padding: 22px 0 40px;        /* extra bottom space for swoosh */
+  color: #fff;
+
+  /* blue glass gradient like your screenshot */
+  background: linear-gradient(
+    to bottom,
+    rgba(10, 105, 150, 0.95) 0%,
+    rgba(10, 105, 150, 0.75) 45%,
+    rgba(10, 105, 150, 0.00) 100%
+  );
+}
+
+/* inner container */
+.top-header .header-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 22px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+}
+
+/* logo */
+.top-header .logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  color: #fff;
+  font-weight: 800;
+  font-size: 20px;
+}
+
+/* nav links */
+.top-header .nav {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+}
+
+.top-header .nav a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 600;
+  opacity: 0.9;
+}
+
+.top-header .nav a:hover {
+  opacity: 1;
+  text-decoration: underline;
+}
+
+/* button on right */
+.top-header .header-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 16px;
+  border-radius: 10px;
+  border: 1px solid rgba(255,255,255,0.35);
+  background: rgba(255,255,255,0.12);
+  color: #fff;
+  text-decoration: none;
+  font-weight: 800;
+  font-size: 14px;
+  backdrop-filter: blur(8px);
+}
+
+.top-header .header-btn:hover {
+  background: rgba(255,255,255,0.18);
+}
+
+/* ===== THIN WHITE CURVED SWOOSH ===== */
+.top-header::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 10px;                 /* move swoosh up/down */
+  height: 60px;                 /* swoosh area */
+  pointer-events: none;
+
+  /* SVG curve as background */
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 120' preserveAspectRatio='none'%3E%3Cpath d='M0,70 C220,20 420,120 650,70 C860,25 1020,35 1200,60' fill='none' stroke='white' stroke-width='3' stroke-linecap='round' opacity='0.9'/%3E%3C/svg%3E")
+    no-repeat center bottom;
+  background-size: 100% 100%;
+}
+
+/* ===== MOBILE ===== */
+@media (max-width: 900px) {
+  .top-header .header-inner {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 14px;
+  }
+
+  .top-header .nav {
+    flex-wrap: wrap;
+    gap: 14px;
+  }
+}
 /* Maritime Logo outside header */
 .outside-logo-wrap {
   display: flex;
@@ -13,6 +123,21 @@
   background: none;
   box-shadow: 0 4px 24px rgba(10,41,66,0.12);
   filter: drop-shadow(0 2px 8px #0a2942);
+}
+.brand-cluster{display:flex;align-items:center;gap:16px;flex-wrap:nowrap}
+.brand-crest{
+  height:64px;
+  width:auto;
+  border-radius:14px;
+  padding:8px;
+  background:#fff;
+  box-shadow:0 12px 28px rgba(0,0,0,.22);
+}
+.footer-crest{display:flex;justify-content:center}
+.footer-crest-image{
+  height:80px;
+  width:auto;
+  filter:drop-shadow(0 10px 24px rgba(0,0,0,.18));
 }
 :root{
   --bg:#0a2942; --bg2:#061c2e;
@@ -34,27 +159,89 @@ a{color:inherit;text-decoration:none}
 .utility a{color:#fff;text-decoration:underline}
 
 /* Header / nav */
-.site-header{position:sticky;top:0;z-index:60;background:rgba(10,41,66,0.18);backdrop-filter:blur(6px)}
-.nav{display:flex;align-items:center;justify-content:space-between;padding:14px 18px;gap:12px;max-width:var(--max);margin:0 auto}
-.brand{display:flex;align-items:center;gap:12px}
-.brand-logo{
-  height:88px;
-  width:auto;
-  border-radius:8px;
-  object-fit:contain;
-  background:none;
-  box-shadow:0 4px 24px rgba(10,41,66,0.12);
-  filter:drop-shadow(0 2px 8px #0a2942);
+
+/* Maritime HVAC Header Styles */
+
+:root{
+  --header-bg:#0b5f84;
+  --text:#ffffff;
 }
-.brand-text strong{color:#fff}
-.links{display:flex;gap:12px;align-items:center;flex-wrap:wrap}
-.links .navlink{color:#fff;padding:8px 10px;border-radius:8px;font-weight:600;font-size:14px}
-.links .navlink.active{background:rgba(255,255,255,.18)}
-.nav-cta{display:flex;align-items:center;gap:8px}
-.hamburger{display:none;background:none;border:0;color:#fff;font-size:18px;padding:8px}
-.btn{padding:10px 14px;border-radius:12px;border:1px solid rgba(255,255,255,.08);cursor:pointer}
-.btn-primary{background:linear-gradient(180deg,var(--accent),var(--accent-dark));border:none;color:#14223a;font-weight:700}
-.btn-ghost{background:transparent;border:1px solid rgba(255,255,255,.06);color:#fff}
+
+.site-header{
+  background: var(--header-bg);
+  color: var(--text);
+  position: relative;
+  overflow: hidden;
+}
+
+.nav-wrap{
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 18px 20px 28px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+}
+
+.brand{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  color:var(--text);
+  text-decoration:none;
+  font-weight:800;
+  letter-spacing:0.2px;
+}
+.brand-text{ font-size: 20px; }
+.brand-mark{ font-size: 22px; }
+
+.nav{
+  display:flex;
+  gap:18px;
+  flex-wrap:wrap;
+  justify-content:center;
+}
+.nav a{
+  color:var(--text);
+  text-decoration:none;
+  font-weight:600;
+  font-size: 14px;
+  opacity:0.9;
+}
+.nav a:hover{ opacity:1; text-decoration: underline; }
+
+.cta{
+  color: var(--header-bg);
+  background: #ffffff;
+  text-decoration:none;
+  font-weight:800;
+  padding: 10px 14px;
+  border-radius: 10px;
+  white-space: nowrap;
+}
+.cta:hover{ filter: brightness(0.95); }
+
+/* The swoosh sits along the bottom of the header */
+.swoosh{
+  position:absolute;
+  left:0;
+  right:0;
+  bottom:6px;
+  height: 44px;     /* adjust swoosh height */
+  width:100%;
+  pointer-events:none;
+}
+
+/* Mobile */
+@media (max-width: 900px){
+  .nav-wrap{
+    flex-direction: column;
+    align-items: flex-start;
+    padding-bottom: 38px;
+  }
+  .nav{ gap:14px; }
+}
 
 /* Mobile drawer */
 .mobile-drawer{display:none;position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:70}
@@ -76,9 +263,17 @@ a{color:inherit;text-decoration:none}
 .hero-bg {
   position: absolute;
   top: 0; left: 0; width: 100%; height: 100%;
-  object-fit: cover;
+  background: url("https://assets.cdn.highlevel.com/XXXX/hero-bg.jpg") center/cover no-repeat;
   z-index: 1;
   filter: brightness(0.85);
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 100%;
+  background: url("https://assets.cdn.highlevel.com/XXXX/hero-overlay.png") center/cover no-repeat;
+  z-index: 2;
+  pointer-events: none;
 }
 
 .hero-content {
@@ -505,6 +700,9 @@ footer{ background: var(--bg); color: rgba(255,255,255,.88); padding:40px 0; }
   .hero-actions{ justify-content:center; }
   .cta-actions{ justify-content:center; }
   .btn-row{ justify-content:center; }
+  .brand-cluster{ gap:12px; }
+  .brand-crest{ height:48px; padding:6px; }
+  .footer-crest-image{ height:64px; }
 }
 
 @media (max-width:480px){
@@ -516,3 +714,41 @@ footer{ background: var(--bg); color: rgba(255,255,255,.88); padding:40px 0; }
   .content{ padding:40px 0; }
   .trust-logos img{ height:40px; }
 }
+
+/* OUR SERVICES COLOR UTILITIES */
+.top-red {
+  background: linear-gradient(90deg, #ff6b6b 0%, #ffb199 100%);
+  color: #fff;
+}
+.top-orange {
+  background: linear-gradient(90deg, #ffba4b 0%, #f09b2f 100%);
+  color: #fff;
+}
+.top-sky {
+  background: linear-gradient(90deg, #6bb6ff 0%, #b3e0ff 100%);
+  color: #fff;
+}
+.top-slate {
+  background: linear-gradient(90deg, #5b6677 0%, #aab4c3 100%);
+  color: #fff;
+}
+.slate {
+  background: #f3f6fb;
+}
+.dot {
+  display: inline-block;
+  width: 1.2em;
+  height: 1.2em;
+  border-radius: 50%;
+  margin-right: 8px;
+  font-size: 1.1em;
+  vertical-align: middle;
+}
+
+/* Custom styles */
+.top-red    { background: linear-gradient(90deg, #ff6b6b 0%, #ffb199 100%); color: #fff; }
+.top-orange { background: linear-gradient(90deg, #ffba4b 0%, #f09b2f 100%); color: #fff; }
+.top-sky    { background: linear-gradient(90deg, #6bb6ff 0%, #b3e0ff 100%); color: #fff; }
+.top-slate  { background: linear-gradient(90deg, #5b6677 0%, #aab4c3 100%); color: #fff; }
+.slate      { background: #f3f6fb; }
+.dot        { margin-right: 8px; }

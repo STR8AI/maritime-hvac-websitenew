@@ -1,0 +1,131 @@
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#0a2942;
+  --bg-alt:#061c2e;
+  --accent:#ffba4b;
+  --accent-dark:#f09b2f;
+  --card:#ffffff;
+  --text:#0b1320;
+  --muted:#5b6677;
+  --max:1180px;
+}
+body{
+  font-family:Poppins,system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
+  background:var(--bg-alt);
+  color:var(--text);
+}
+a{color:inherit;text-decoration:none}
+
+/* Header */
+.topbar{
+  position:sticky;top:0;z-index:60;
+  background:rgba(6,28,46,0.92);
+  border-bottom:1px solid rgba(255,255,255,0.08);
+  backdrop-filter:blur(10px);
+}
+.topbar-inner{
+  max-width:var(--max);
+  margin:0 auto;
+  padding:12px 18px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:18px;
+}
+.brand-cluster{display:flex;align-items:center;gap:16px}
+/* .brand-crest and .brand-logo removed: no images used */
+.nav-links{display:flex;gap:18px;font-weight:600;color:#fff}
+.nav-links a{color:rgba(255,255,255,0.9);padding:8px 10px;border-radius:999px;transition:background 0.15s}
+.nav-links a:hover{background:rgba(255,255,255,0.12)}
+.topbar-cta{
+  display:inline-flex;align-items:center;justify-content:center;
+  padding:10px 18px;
+  border-radius:999px;
+  background:linear-gradient(180deg,var(--accent),var(--accent-dark));
+  color:#14223a;font-weight:700;
+  box-shadow:0 18px 36px rgba(240,155,47,0.3);
+}
+
+/* Hero */
+.mh-site{background:#041221;color:#fff;min-height:100vh}
+.hero{
+  padding:80px 0 60px;
+  background:linear-gradient(200deg,rgba(4,18,33,0.82),rgba(4,18,33,0.92));
+  /* Removed hero background image */
+}
+.hero-inner{
+  max-width:var(--max);
+  margin:0 auto;
+  display:flex;
+  flex-direction:column;
+  gap:48px;
+  align-items:center;
+  padding:0 18px;
+  /* Changed to flex layout for single column without images */
+}
+.hero-text{display:flex;flex-direction:column;gap:18px}
+.hero-badge{
+  display:inline-flex;align-items:center;gap:8px;
+  background:rgba(255,255,255,0.1);
+  border:1px solid rgba(255,255,255,0.18);
+  padding:8px 14px;
+  border-radius:999px;
+  font-size:13px;font-weight:600;
+  color:rgba(255,255,255,0.9);
+}
+.hero-headline{font-size:clamp(32px,4vw,54px);line-height:1.1;margin:0;font-weight:800;color:#fff}
+.hero-subline{font-size:16px;line-height:1.7;color:rgba(255,255,255,0.86);max-width:60ch}
+.cta-btn{
+  display:inline-flex;align-items:center;justify-content:center;
+  padding:14px 24px;
+  border-radius:999px;
+  font-weight:700;
+  background:linear-gradient(180deg,var(--accent),var(--accent-dark));
+  color:#14223a;
+  box-shadow:0 20px 44px rgba(240,155,47,0.35);
+}
+.cta-btn:hover{opacity:0.92}
+
+/* .hero-image, .person-wrap, .maritime-headshot, .van removed: no images used */
+
+/* Sections */
+.section{padding:80px 0;background:#f3f6fb;color:var(--text)}
+.section.booking{background:#0f1d2b;color:#fff}
+.section .card{
+  max-width:520px;margin:0 auto;
+  background:rgba(255,255,255,0.08);
+  border-radius:18px;
+  padding:28px;
+  box-shadow:0 20px 45px rgba(0,0,0,0.28);
+  border:1px solid rgba(255,255,255,0.2);
+}
+.booking-card h3{margin:0 0 12px;font-size:24px}
+.booking-card p{margin:0 0 24px;color:rgba(255,255,255,0.86)}
+.booking-placeholder{
+  min-height:180px;
+  border-radius:14px;
+  border:2px dashed rgba(255,255,255,0.22);
+  display:grid;place-items:center;
+  color:rgba(255,255,255,0.6);
+  font-size:15px;
+}
+
+/* Footer */
+.site-footer{background:#061727;color:rgba(255,255,255,0.88);padding:32px 18px}
+.footer-inner{max-width:var(--max);margin:0 auto;display:flex;align-items:center;gap:28px;flex-wrap:wrap;justify-content:center}
+.footer-crest-image{height:70px;width:auto;filter:drop-shadow(0 10px 24px rgba(0,0,0,0.18))}
+/* .footer-crest-image removed: no images used */
+.footer-copy{display:flex;flex-direction:column;gap:6px;text-align:center}
+.footer-copy a{color:#fff;text-decoration:underline}
+.footer-copy small{opacity:0.75}
+
+/* Responsive */
+@media (max-width:980px){
+  .hero-inner{gap:36px;text-align:center}
+  /* .hero-image and .van removed: no images used */
+  .nav-links{display:none}
+}
+@media (max-width:640px){
+  .hero{padding:60px 0 40px}
+  /* .brand-crest, .brand-logo, .person-wrap removed: no images used */
+}

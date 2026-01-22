@@ -7,7 +7,38 @@
   <link rel="icon" href="../04-assets/images/other/favicon.svg" />
   <link rel="stylesheet" href="styles.css" />
   <meta name="ghl-assets" content="" />
-  <script>(function(){try{var m=document.querySelector('meta[name="ghl-assets"]');if(!m)return;var b=(m.content||'').trim();if(!b)return;function bn(p){return p.split('/').pop().split('?')[0].split('#')[0]}document.addEventListener('DOMContentLoaded',function(){document.querySelectorAll('img').forEach(function(img){var s=img.getAttribute('src')||'';if(s.indexOf('../04-assets/images/other/')===0)img.src=b+'/'+bn(s)});document.querySelectorAll('.hero-bg').forEach(function(el){var style=el.style.backgroundImage||getComputedStyle(el).backgroundImage||'';var mm=style.match(/url\(["']?(.*?)["']?\)/);if(mm&&mm[1].indexOf('../04-assets/images/other/')===0)el.style.backgroundImage="url('"+b+'/'+bn(mm[1])+"')"})})}catch(e){console.warn(e)}})();</script>
+  <script>
+    (function(){
+      try{
+        var meta=document.querySelector('meta[name="ghl-assets"]');
+        if(!meta)return;
+        var base=(meta.content||'').trim();
+        if(!base)return;
+
+        function basename(path){
+          return path.split('/').pop().split('?')[0].split('#')[0];
+        }
+
+        document.addEventListener('DOMContentLoaded',function(){
+          document.querySelectorAll('img').forEach(function(img){
+            var src=img.getAttribute('src')||'';
+            if(src.indexOf('../04-assets/images/other/')===0){
+              img.src=base+'/'+basename(src);
+            }
+          });
+
+          document.querySelectorAll('[data-ghl-asset]').forEach(function(el){
+            var asset=(el.getAttribute('data-ghl-asset')||'').trim();
+            if(asset){
+              el.style.backgroundImage="url('"+base+'/'+asset+"')";
+            }
+          });
+        });
+      }catch(err){
+        console.warn('GHL asset rewrite failed',err);
+      }
+    })();
+  </script>
 </head>
 <body>
   <header class="hl-header">
@@ -21,14 +52,18 @@
     <p>Phone: <a href="tel:9024146000">902-414-6000</a></p>
     <p>Email: <a href="mailto:info@maritimehvac.ca">info@maritimehvac.ca</a></p>
 
-    <form action="#" method="post" class="card">
-      <label>Name<input class="input" name="name" required></label>
-      <label>Email<input class="input" name="email" type="email" required></label>
-      <label>Message<textarea class="input" name="message" rows="5" required></textarea></label>
+    <form id="contactForm" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/success" class="card">
+      <input type="hidden" name="form-name" value="contact" />
+      <p style="display:none">
+        <label>Don’t fill this out if you’re human: <input name="bot-field"></label>
+      </p>
+      <label>Name<input class="input" id="name" name="name" required></label>
+      <label>Email<input class="input" id="email" name="email" type="email" required></label>
+      <label>Message<textarea class="input" id="message" name="message" rows="5" required></textarea></label>
       <div class="btn-row"><button class="btn-primary" type="submit">Send</button></div>
     </form>
   </main>
   <footer class="hl-footer">© <span id="year"></span> Maritime HVAC</footer>
-  <script>document.getElementById('year').textContent=new Date().getFullYear();</script>
+  <script src="main.js"></script>
 </body>
 </html>

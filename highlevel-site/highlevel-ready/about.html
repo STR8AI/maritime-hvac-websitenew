@@ -7,7 +7,38 @@
   <link rel="icon" href="../04-assets/images/other/favicon.svg" />
   <link rel="stylesheet" href="styles.css" />
   <meta name="ghl-assets" content="" />
-  <script>(function(){try{var m=document.querySelector('meta[name="ghl-assets"]');if(!m)return;var b=(m.content||'').trim();if(!b)return;function bn(p){return p.split('/').pop().split('?')[0].split('#')[0]}document.addEventListener('DOMContentLoaded',function(){document.querySelectorAll('img').forEach(function(img){var s=img.getAttribute('src')||'';if(s.indexOf('../04-assets/images/other/')===0)img.src=b+'/'+bn(s)});document.querySelectorAll('.hero-bg').forEach(function(el){var style=el.style.backgroundImage||getComputedStyle(el).backgroundImage||'';var mm=style.match(/url\(["']?(.*?)["']?\)/);if(mm&&mm[1].indexOf('../04-assets/images/other/')===0)el.style.backgroundImage="url('"+b+'/'+bn(mm[1])+"')"})})}catch(e){console.warn(e)}})();</script>
+  <script>
+    (function(){
+      try{
+        var meta=document.querySelector('meta[name="ghl-assets"]');
+        if(!meta)return;
+        var base=(meta.content||'').trim();
+        if(!base)return;
+
+        function basename(path){
+          return path.split('/').pop().split('?')[0].split('#')[0];
+        }
+
+        document.addEventListener('DOMContentLoaded',function(){
+          document.querySelectorAll('img').forEach(function(img){
+            var src=img.getAttribute('src')||'';
+            if(src.indexOf('../04-assets/images/other/')===0){
+              img.src=base+'/'+basename(src);
+            }
+          });
+
+          document.querySelectorAll('[data-ghl-asset]').forEach(function(el){
+            var asset=(el.getAttribute('data-ghl-asset')||'').trim();
+            if(asset){
+              el.style.backgroundImage="url('"+base+'/'+asset+"')";
+            }
+          });
+        });
+      }catch(err){
+        console.warn('GHL asset rewrite failed',err);
+      }
+    })();
+  </script>
 </head>
 <body>
   <header class="hl-header">
@@ -17,7 +48,9 @@
   </header>
 
   <main>
-    <section class="hero"><div class="hero-bg" style="background-image:url('../04-assets/images/other/peggys-cove.jpg')"></div>
+    <section class="hero">
+      <div class="hero-bg" data-ghl-asset="hero-bg.jpg"></div>
+      <div class="hero-overlay" data-ghl-asset="hero-overlay.png"></div>
       <div class="hero-inner wrap">
         <div class="hero-left">
           <h1>About Maritime HVAC</h1>

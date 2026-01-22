@@ -10,7 +10,35 @@
   <meta name="ghl-assets" content="" />
   <script>
     (function(){
-      try{var meta=document.querySelector('meta[name="ghl-assets"]');if(!meta)return;var base=(meta.content||'').trim();if(!base)return;function basename(p){return p.split('/').pop().split('?')[0].split('#')[0]}document.addEventListener('DOMContentLoaded',function(){document.querySelectorAll('img').forEach(function(img){var s=img.getAttribute('src')||'';if(s.indexOf('../04-assets/images/other/')===0)img.src=base+'/'+basename(s)});document.querySelectorAll('.hero-bg').forEach(function(el){var style=el.style.backgroundImage||getComputedStyle(el).backgroundImage||'';var m=style.match(/url\(["']?(.*?)["']?\)/);if(m&&m[1].indexOf('../04-assets/images/other/')===0)el.style.backgroundImage="url('"+base+'/'+basename(m[1])+"')"})})}catch(e){console.warn(e)}})();
+      try{
+        var meta=document.querySelector('meta[name="ghl-assets"]');
+        if(!meta)return;
+        var base=(meta.content||'').trim();
+        if(!base)return;
+
+        function basename(path){
+          return path.split('/').pop().split('?')[0].split('#')[0];
+        }
+
+        document.addEventListener('DOMContentLoaded',function(){
+          document.querySelectorAll('img').forEach(function(img){
+            var src=img.getAttribute('src')||'';
+            if(src.indexOf('../04-assets/images/other/')===0){
+              img.src=base+'/'+basename(src);
+            }
+          });
+
+          document.querySelectorAll('[data-ghl-asset]').forEach(function(el){
+            var asset=(el.getAttribute('data-ghl-asset')||'').trim();
+            if(asset){
+              el.style.backgroundImage="url('"+base+'/'+asset+"')";
+            }
+          });
+        });
+      }catch(err){
+        console.warn('GHL asset rewrite failed',err);
+      }
+    })();
   </script>
 </head>
 <body>
@@ -21,7 +49,9 @@
   </header>
 
   <main>
-    <section class="hero"><div class="hero-bg" style="background-image:url('../04-assets/images/other/peggys-cove.jpg')"></div>
+    <section class="hero">
+      <div class="hero-bg" data-ghl-asset="hero-bg.jpg"></div>
+      <div class="hero-overlay" data-ghl-asset="hero-overlay.png"></div>
       <div class="hero-inner wrap">
         <div class="hero-left">
           <h1>Our Services</h1>
@@ -37,6 +67,113 @@
         <div class="card">Air Conditioning</div>
         <div class="card">Electrical Services</div>
         <div class="card">Water Treatment & Air Quality</div>
+      </div>
+    </section>
+
+    <section class="services-overview">
+      <div class="wrap">
+        <div class="services-head">
+          <h2>Everything We Service</h2>
+          <p>From hot water tanks to whole-home HVAC systems, we handle installs, repairs, and preventative maintenance with clear scopes and clean workmanship.</p>
+        </div>
+
+        <div class="services-cards">
+          <article class="service-card service-card--heat">
+            <div class="service-card__top">
+              <span class="service-tag tag-heat">Heating + Cooling</span>
+              <h3>Whole-home comfort systems</h3>
+            </div>
+            <ul>
+              <li>Furnaces</li>
+              <li>Air conditioners</li>
+              <li>Heat pumps (ducted / ductless)</li>
+              <li>Mini splits</li>
+              <li>Air exchangers + ventilation</li>
+              <li>Heat recovery systems</li>
+              <li>Roof top HVAC / refrigeration</li>
+            </ul>
+            <div class="service-more">And more available on request.</div>
+          </article>
+
+          <article class="service-card service-card--power">
+            <div class="service-card__top">
+              <span class="service-tag tag-power">Electrical</span>
+              <h3>Power upgrades and wiring</h3>
+            </div>
+            <ul>
+              <li>Electrical panel upgrades (100 / 200 / 400 amp)</li>
+              <li>Feeds to out-buildings + excavation</li>
+              <li>EV charging station installation</li>
+              <li>Generators (standby / portable)</li>
+              <li>Oil to electric conversions</li>
+              <li>Renovations + upgrades</li>
+              <li>Fixtures + appliance circuits</li>
+            </ul>
+            <div class="service-more">And more available on request.</div>
+          </article>
+
+          <article class="service-card service-card--water">
+            <div class="service-card__top">
+              <span class="service-tag tag-water">Water + Air</span>
+              <h3>Clean water and air quality</h3>
+            </div>
+            <ul>
+              <li>Hot water tanks + tankless systems</li>
+              <li>Air purification</li>
+              <li>Water treatment (filters, UV, softening)</li>
+              <li>Water purification</li>
+              <li>Humidifiers + dehumidifiers</li>
+            </ul>
+            <div class="service-more">And more available on request.</div>
+          </article>
+
+          <article class="service-card service-card--care">
+            <div class="service-card__top">
+              <span class="service-tag tag-care">Service Plans</span>
+              <h3>Maintenance and protection</h3>
+            </div>
+            <p>Keep your equipment running at peak efficiency and avoid surprise breakdowns with scheduled service plans.</p>
+            <ul>
+              <li>Heat pump cleaning</li>
+              <li>Heating + cooling tune-ups</li>
+              <li>Refrigeration service</li>
+            </ul>
+            <div class="service-more">And more available on request.</div>
+          </article>
+        </div>
+
+        <div class="services-grid">
+          <article class="service-tile">
+            <div class="service-tile__media" data-service="hot-water"></div>
+            <h4>Hot Water Tanks</h4>
+            <p>Traditional and tankless installs, replacements, and repairs.</p>
+          </article>
+          <article class="service-tile">
+            <div class="service-tile__media" data-service="mini-splits"></div>
+            <h4>Mini Splits</h4>
+            <p>Efficient ductless heating and cooling for targeted zones.</p>
+          </article>
+          <article class="service-tile">
+            <div class="service-tile__media" data-service="central-heat"></div>
+            <h4>Central Heat Pumps</h4>
+            <p>Whole-home comfort with ducted heat pump systems.</p>
+          </article>
+          <article class="service-tile">
+            <div class="service-tile__media" data-service="air-exchangers"></div>
+            <h4>Air Exchangers</h4>
+            <p>Balanced ventilation that improves indoor air quality.</p>
+          </article>
+          <article class="service-tile">
+            <div class="service-tile__media" data-service="water-treatment"></div>
+            <h4>Water Treatment</h4>
+            <p>Filtration, UV, and softening options for clean water.</p>
+          </article>
+          <article class="service-tile">
+            <div class="service-tile__media" data-service="heat-cleaning"></div>
+            <h4>Heat Pump Cleaning</h4>
+            <p>Seasonal cleaning and performance checks for reliability.</p>
+          </article>
+        </div>
       </div>
     </section>
   </main>
