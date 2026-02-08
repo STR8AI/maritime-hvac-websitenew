@@ -4,9 +4,143 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Maritime HVAC</title>
+    <meta
+      name="description"
+      content="Maritime HVAC provides heating, cooling, electrical, and water solutions across the Maritimes."
+    />
   </head>
   <body>
-    <div id="root"></div>
+    <header class="topbar">
+      <div class="topbar-inner">
+        <a class="brand" href="#home">
+          <img
+            src="/assets/logo.png"
+            alt="Maritime HVAC"
+            style="height: 44px; width: auto;"
+          />
+        </a>
+        <nav class="nav-links">
+          <a href="#home">Home</a>
+          <a href="#services">Services</a>
+          <a href="/book.html">Book</a>
+          <a href="#about">About</a>
+          <a href="#contact">Contact</a>
+        </nav>
+        <a class="topbar-cta" href="#booking">Request Service</a>
+      </div>
+    </header>
+
+    <main class="mh-site">
+      <section class="hero" id="home">
+        <div class="hero-bg"></div>
+        <div class="hero-overlay"></div>
+        <svg class="hero-swoosh" viewBox="0 0 1440 140" preserveAspectRatio="none">
+          <path d="M0,90 C240,130 420,40 720,80 C980,120 1160,40 1440,70 L1440,0 L0,0 Z" />
+        </svg>
+        <div class="hero-content">
+          <div class="hero-copy">
+            <h1>Maritime HVAC</h1>
+            <h2>Peggy's Cove comfort, delivered</h2>
+            <p>
+              Heating, cooling, electrical, and water solutions - installed clean, sized
+              correctly, and built to last across the Maritimes.
+            </p>
+            <a class="hero-btn" href="#booking">Apply Now</a>
+          </div>
+          <div class="hero-visual">
+            <img
+              class="hero-person"
+              src="/assets/hero-person.png"
+              alt="Troy"
+            />
+            <img
+              class="hero-van"
+              src="/assets/van.png"
+              alt="Maritime HVAC van"
+            />
+          </div>
+        </div>
+      </section>
+
+      <section class="services-modern" id="services">
+        <div class="services-head">
+          <h2>Services Built for Maritime Weather</h2>
+          <p>
+            Mini splits, central heat pumps, electrical, ventilation, water treatment, and
+            maintenance designed for Atlantic Canada.
+          </p>
+        </div>
+        <div class="services-cards">
+          <article class="service-card">
+            <img
+              class="service-image"
+              src="/assets/services/mini-splits.png"
+              alt="Mini splits"
+            />
+            <div class="service-body">
+              <h3 class="service-title">Mini Splits</h3>
+              <p class="service-desc">High-efficiency heating and cooling with fast installs.</p>
+              <button class="service-btn">View Service</button>
+            </div>
+          </article>
+          <article class="service-card">
+            <img
+              class="service-image"
+              src="/assets/services/central-heat-pumps.png"
+              alt="Central heat pumps"
+            />
+            <div class="service-body">
+              <h3 class="service-title">Central Heat Pumps</h3>
+              <p class="service-desc">Whole-home comfort sized for Maritime winters.</p>
+              <button class="service-btn">View Service</button>
+            </div>
+          </article>
+        </div>
+        <div class="services-actions">
+          <button class="svc-main-btn">View All Services</button>
+        </div>
+      </section>
+
+      <section class="section" id="about">
+        <div class="card" style="padding: 24px; display: grid; gap: 16px;">
+          <h1>About Maritime HVAC</h1>
+          <p>
+            We serve the Maritimes with heating, cooling, electrical, ventilation, and water
+            solutions sized for Atlantic weather.
+          </p>
+          <ul style="margin: 0; padding-left: 18px; color: var(--muted);">
+            <li>Licensed and insured technicians</li>
+            <li>Residential and light commercial</li>
+            <li>Fast response and clean installs</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="section" id="booking">
+        <div class="card booking-card">
+          <h3>Book a Service</h3>
+          <p>Embed your HighLevel booking form below.</p>
+          <div class="booking-placeholder">
+            Booking form embed goes here. (https://maritimehvac.info/bookingservice)
+          </div>
+        </div>
+      </section>
+
+      <footer class="section" id="contact">
+        <div class="card" style="display: flex; flex-direction: column; gap: 12px;">
+          <strong>Maritime HVAC</strong>
+          <div>Serving the Maritimes - Licensed &amp; Insured</div>
+          <div>
+            Email: <a href="mailto:info@maritimehvac.ca">info@maritimehvac.ca</a>
+          </div>
+          <div>Phone: <a href="tel:+1-800-000-0000">+1 (800) 000-0000</a></div>
+          <div style="opacity: 0.75;">
+            &copy; <span id="year"></span> Maritime HVAC. All rights reserved.
+          </div>
+        </div>
+      </footer>
+    </main>
+
     <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>

@@ -1,0 +1,57 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: #000;
+  color: #fff;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  line-height: 1.4;
+}
+
+.wrap {
+  max-width: 900px;
+  margin: 60px auto;
+  padding: 0 20px;
+}
+
+.title {
+  margin-bottom: 30px;
+  font-size: 28px;
+  font-weight: 800;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+}
+
+.card {
+  display: block;
+  padding: 22px;
+  border: 1px solid #1e293b;
+  background: #0f172a;
+  text-align: center;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  transition: all 0.15s ease;
+  border-radius: 14px;
+}
+
+.card:hover {
+  border-color: #3b82c4;
+  transform: translateY(-2px);
+}
+
+.card:focus-visible {
+  outline: 2px solid #3b82c4;
+  outline-offset: 3px;
+}
+
+.card.danger {
+  border-color: #d43f3a;
+  color: #d43f3a;
+}
