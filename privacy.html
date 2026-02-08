@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Privacy & Text Message Consent</title>
+  <link rel="stylesheet" href="privacy.css" />
+</head>
+
+<body>
+  <div class="container">
+    <div class="header">
+      <div class="brand">
+        <a href="index.html" class="back-link">← Back to Home</a>
+        <h1>Privacy & Text Message Consent</h1>
+        <p class="subtitle">
+          Provide your contact details and select your text message preferences for Maritime HVAC.
+        </p>
+      </div>
+    </div>
+
+    <form class="card" id="consentForm" novalidate>
+      <div class="form-grid">
+        <div>
+          <label for="fullName">Full name<span class="required">*</span></label>
+          <input id="fullName" name="fullName" type="text" placeholder="Jane Smith" autocomplete="name" required />
+        </div>
+        <div>
+          <label for="phone">Mobile phone<span class="required">*</span></label>
+          <input id="phone" name="phone" type="tel" placeholder="(555) 555-5555" autocomplete="tel" required />
+        </div>
+        <div>
+          <label for="email">Email (optional)</label>
+          <input id="email" name="email" type="email" placeholder="jane@email.com" autocomplete="email" />
+        </div>
+        <div>
+          <label for="account">Service address (optional)</label>
+          <input id="account" name="account" type="text" placeholder="123 Main St, City" autocomplete="street-address" />
+        </div>
+      </div>
+
+      <div class="section">
+        <h2>Text Message Consents</h2>
+
+        <div class="consent" role="group" aria-label="Non-marketing consent">
+          <input id="consentNonMarketing" name="consentNonMarketing" type="checkbox" />
+          <div>
+            <p>
+              <strong>I consent to receive non-marketing text messages</strong> from Maritime HVAC about service and warranty.
+              Message frequency may vary, message &amp; data rates may apply. Text HELP for assistance, reply STOP to opt out.
+            </p>
+            <div class="fine-print">
+              Examples: appointment reminders, technician ETA updates, service confirmations, warranty notices.
+            </div>
+          </div>
+        </div>
+
+        <div class="consent" role="group" aria-label="Marketing consent">
+          <input id="consentMarketing" name="consentMarketing" type="checkbox" />
+          <div>
+            <p>
+              <strong>I consent to receive marketing text messages</strong> from Maritime HVAC at the phone number provided.
+              Message frequency may vary. Message &amp; data rates may apply. Text HELP for assistance, reply STOP to opt out.
+            </p>
+            <div class="fine-print">
+              Examples: promotions, seasonal offers, discounts, reminders to book service.
+            </div>
+          </div>
+        </div>
+
+        <p class="legal">
+          By selecting one or more options above, you acknowledge you are the authorized user of the phone number provided.
+          Consent is not a condition of purchase. You can opt out at any time by replying <strong>STOP</strong>.
+        </p>
+
+        <div class="signature">
+          <div>
+            <label for="signature">Signature (type full name)<span class="required">*</span></label>
+            <input id="signature" name="signature" type="text" placeholder="Jane Smith" required />
+          </div>
+          <div>
+            <label for="dateSigned">Date<span class="required">*</span></label>
+            <input id="dateSigned" name="dateSigned" type="text" required />
+          </div>
+        </div>
+
+        <div class="actions">
+          <p class="note">
+            Fields marked <span class="required">*</span> are required.
+          </p>
+          <div class="btns">
+            <button type="button" class="secondary" id="clearBtn">Clear</button>
+            <button type="submit" class="primary">Submit Consent</button>
+          </div>
+        </div>
+
+        <div class="error" id="errorBox" aria-live="polite"></div>
+      </div>
+    </form>
+  </div>
+
+  <script>
+    // Set date to today's local date (YYYY-MM-DD) in a readable format.
+    (function setDefaultDate(){
+      const el = document.getElementById("dateSigned");
+      const d = new Date();
+      const yyyy = d.getFullYear();
+      const mm = String(d.getMonth() + 1).padStart(2, "0");
+      const dd = String(d.getDate()).padStart(2, "0");
+      el.value = `${yyyy}-${mm}-${dd}`;
+    })();
+
+    const form = document.getElementById("consentForm");
+    const errorBox = document.getElementById("errorBox");
+    const clearBtn = document.getElementById("clearBtn");
+
+    function showError(msg){
+      errorBox.textContent = msg;
+      errorBox.style.display = "block";
+    }
+    function hideError(){
+      errorBox.textContent = "";
+      errorBox.style.display = "none";
+    }
+
+    clearBtn.addEventListener("click", () => {
+      form.reset();
+      hideError();
+      // Reapply today's date after reset
+      const d = new Date();
+      const yyyy = d.getFullYear();
+      const mm = String(d.getMonth() + 1).padStart(2, "0");
+      const dd = String(d.getDate()).padStart(2, "0");
+      document.getElementById("dateSigned").value = `${yyyy}-${mm}-${dd}`;
+    });
+
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
+      hideError();
+
+      const fullName = document.getElementById("fullName").value.trim();
+      const phone = document.getElementById("phone").value.trim();
+      const signature = document.getElementById("signature").value.trim();
+      const dateSigned = document.getElementById("dateSigned").value.trim();
+
+      const nonMarketing = document.getElementById("consentNonMarketing").checked;
+      const marketing = document.getElementById("consentMarketing").checked;
+
+      if (!fullName || !phone || !signature || !dateSigned){
+        showError("Please complete all required fields (Full name, Mobile phone, Signature, Date).");
+        return;
+      }
+
+      if (signature.toLowerCase() !== fullName.toLowerCase()){
+        showError("Signature should match the Full name (type the same name).");
+        return;
+      }
+
+      if (!nonMarketing && !marketing){
+        showError("Please select at least one consent option (non-marketing and/or marketing).");
+        return;
+      }
+
+      // At this point you'd normally send the form data to your server.
+      // This demo just shows a confirmation.
+      alert(
+        "Consent submitted.\\n\\n" +
+        "Name: " + fullName + "\\n" +
+        "Phone: " + phone + "\\n" +
+        "Non-marketing: " + (nonMarketing ? "Yes" : "No") + "\\n" +
+        "Marketing: " + (marketing ? "Yes" : "No") + "\\n" +
+        "Signed: " + dateSigned
+      );
+
+      // Uncomment if you want to clear after submit:
+      // form.reset();
+    });
+  </script>
+</body>
+</html>

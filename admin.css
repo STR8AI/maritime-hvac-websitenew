@@ -1,0 +1,268 @@
+/* ===============================
+   Maritime HVAC – Admin Dashboard
+   =============================== */
+
+:root {
+    --bg: #0b1220;
+    --card: #0f1a2e;
+    --text: #e8eefc;
+    --muted: #b7c3de;
+    --border: rgba(255, 255, 255, 0.12);
+    --accent: #3f7cff;
+    --accent-soft: rgba(63, 124, 255, 0.15);
+    --danger: #ff6b6b;
+    --radius: 14px;
+    --radius-sm: 10px;
+    --shadow: 0 20px 60px rgba(0,0,0,.45);
+    --font: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+          Roboto, Helvetica, Arial, sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    font-family: var(--font);
+    color: var(--text);
+    background: radial-gradient(900px 500px at 15% 0%, rgba(63,124,255,.25), transparent 60%),
+    radial-gradient(800px 600px at 85% 10%, rgba(124,240,214,.18), transparent 55%),
+    var(--bg);
+    padding: 24px 16px 48px;
+}
+
+/* Layout */
+.container {
+    max-width: 820px;
+    margin: 0 auto;
+}
+
+.card {
+    background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.02));
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    padding: 24px;
+}
+
+/* Headings */
+h1 {
+    margin: 0 0 6px;
+    font-size: clamp(22px, 3vw, 30px);
+}
+
+.subtitle {
+    margin: 0 0 18px;
+    color: var(--muted);
+    font-size: 14px;
+}
+
+/* Form fields */
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+}
+
+@media (max-width: 720px) {
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+label {
+    display: block;
+    font-size: 13px;
+    color: var(--muted);
+    margin-bottom: 6px;
+}
+
+input[type="text"],
+input[type="tel"],
+input[type="email"] {
+    width: 100%;
+    padding: 12px;
+    border-radius: var(--radius-sm);
+    border: 1px solid var(--border);
+    background: rgba(0,0,0,.25);
+    color: var(--text);
+    outline: none;
+}
+
+input::placeholder {
+    color: rgba(183,195,222,.6);
+}
+
+input:focus {
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px var(--accent-soft);
+}
+
+/* Sections */
+.section {
+    margin-top: 22px;
+    padding-top: 18px;
+    border-top: 1px solid var(--border);
+}
+
+.section h2 {
+    margin: 0 0 12px;
+    font-size: 16px;
+}
+
+/* Consent blocks */
+.consent {
+    display: flex;
+    gap: 12px;
+    padding: 14px;
+    border-radius: var(--radius-sm);
+    border: 1px solid var(--border);
+    background: rgba(0,0,0,.18);
+}
+
+.consent + .consent {
+    margin-top: 12px;
+}
+
+.consent input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    margin-top: 4px;
+    accent-color: var(--accent);
+    cursor: pointer;
+}
+
+.consent p {
+    margin: 0;
+    font-size: 14.5px;
+    line-height: 1.45;
+}
+
+.fine-print {
+    margin-top: 6px;
+    font-size: 12.5px;
+    color: var(--muted);
+}
+
+/* Signature row */
+.signature {
+    display: grid;
+    grid-template-columns: 1fr 220px;
+    gap: 12px;
+    margin-top: 16px;
+}
+
+@media (max-width: 720px) {
+    .signature {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Buttons */
+.actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 20px;
+}
+
+button {
+    border: none;
+    border-radius: 12px;
+    padding: 12px 16px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+button.primary {
+    background: linear-gradient(135deg, #3f7cff, #6ea8ff);
+    color: #081020;
+    box-shadow: 0 10px 30px rgba(63,124,255,.35);
+}
+
+button.secondary {
+    background: rgba(255,255,255,.06);
+    color: var(--text);
+    border: 1px solid var(--border);
+}
+
+button:hover {
+    filter: brightness(1.05);
+}
+
+/* Required / errors */
+.required {
+    color: var(--danger);
+    font-weight: 700;
+}
+
+.error {
+    margin-top: 14px;
+    padding: 12px;
+    border-radius: 12px;
+    border: 1px solid rgba(255,107,107,.45);
+    background: rgba(255,107,107,.12);
+    color: #ffd2d2;
+    font-size: 13.5px;
+}
+
+/* Legal text */
+.legal {
+    margin-top: 14px;
+    font-size: 12.5px;
+    color: var(--muted);
+    line-height: 1.5;
+}
+
+/* Dashboard specific styles */
+body {
+    margin: 0;
+    background: #000;
+    color: #fff;
+    font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial;
+}
+
+.wrap {
+    max-width: 900px;
+    margin: 60px auto;
+    padding: 0 20px;
+}
+
+.title {
+    margin-bottom: 30px;
+    font-size: 28px;
+    font-weight: 800;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 16px;
+}
+
+.card {
+    padding: 22px;
+    border: 1px solid #1e293b;
+    background: #0f172a;
+    text-align: center;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: .8px;
+    transition: all .15s ease;
+    text-decoration: none;
+    display: block;
+}
+
+.card:hover {
+    border-color: #3b82c4;
+    transform: translateY(-2px);
+}
+
+.card.danger {
+    border-color: #d43f3a;
+    color: #d43f3a;
+}
