@@ -3,143 +3,199 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Maritime HVAC</title>
+    <title>Maritime HVAC | Heating & Cooling in Nova Scotia</title>
     <meta
       name="description"
-      content="Maritime HVAC provides heating, cooling, electrical, and water solutions across the Maritimes."
+      content="Maritime HVAC provides heating, cooling, and service across Nova Scotia with fast response and clear pricing."
     />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Source+Sans+3:wght@400;500;600&display=swap"
+    />
+    <link rel="stylesheet" href="/src/styles.css" />
   </head>
-  <body>
-    <header class="topbar">
-      <div class="topbar-inner">
-        <a class="brand" href="#home">
+  <body class="mhv-home">
+    <header class="mhv-nav">
+      <div class="mhv-wrap mhv-nav-inner">
+        <div class="mhv-brand">
           <img
-            src="/assets/logo.png"
-            alt="Maritime HVAC"
-            style="height: 44px; width: auto;"
+            class="mhv-logo"
+            src="https://storage.googleapis.com/msgsndr/ISncZYLu2hGulBBFoZtW/media/698861662dd985884fe96a16.png"
+            alt="Maritime HVAC logo"
           />
-        </a>
-        <nav class="nav-links">
-          <a href="#home">Home</a>
-          <a href="#services">Services</a>
-          <a href="/book.html">Book</a>
-          <a href="#about">About</a>
-          <a href="#contact">Contact</a>
+          <span class="mhv-brand-name">Maritime HVAC</span>
+        </div>
+        <nav class="mhv-links">
+          <a href="#mhv-services">Services</a>
+          <a href="#mhv-why">Why Us</a>
+          <a href="#mhv-process">Process</a>
+          <a href="#mhv-contact" class="mhv-btn mhv-btn-solid">Book Now</a>
         </nav>
-        <a class="topbar-cta" href="#booking">Request Service</a>
       </div>
     </header>
 
-    <main class="mh-site">
-      <section class="hero" id="home">
-        <div class="hero-bg"></div>
-        <div class="hero-overlay"></div>
-        <svg class="hero-swoosh" viewBox="0 0 1440 140" preserveAspectRatio="none">
-          <path d="M0,90 C240,130 420,40 720,80 C980,120 1160,40 1440,70 L1440,0 L0,0 Z" />
-        </svg>
-        <div class="hero-content">
-          <div class="hero-copy">
-            <h1>Maritime HVAC</h1>
-            <h2>Peggy's Cove comfort, delivered</h2>
-            <p>
-              Heating, cooling, electrical, and water solutions - installed clean, sized
-              correctly, and built to last across the Maritimes.
+    <main>
+      <section class="mhv-hero" id="mhv-home">
+        <div class="mhv-wrap mhv-hero-inner">
+          <div class="mhv-hero-copy">
+            <p class="mhv-eyebrow">Fast, local, and reliable</p>
+            <h1>Comfort you can count on in every season.</h1>
+            <p class="mhv-lead">
+              Installation, service, and emergency repair for homes across Nova Scotia.
+              Clear pricing, clean workmanship, and honest advice.
             </p>
-            <a class="hero-btn" href="#booking">Apply Now</a>
-          </div>
-          <div class="hero-visual">
-            <img
-              class="hero-person"
-              src="/assets/hero-person.png"
-              alt="Troy"
-            />
-            <img
-              class="hero-van"
-              src="/assets/van.png"
-              alt="Maritime HVAC van"
-            />
-          </div>
-        </div>
-      </section>
-
-      <section class="services-modern" id="services">
-        <div class="services-head">
-          <h2>Services Built for Maritime Weather</h2>
-          <p>
-            Mini splits, central heat pumps, electrical, ventilation, water treatment, and
-            maintenance designed for Atlantic Canada.
-          </p>
-        </div>
-        <div class="services-cards">
-          <article class="service-card">
-            <img
-              class="service-image"
-              src="/assets/services/mini-splits.png"
-              alt="Mini splits"
-            />
-            <div class="service-body">
-              <h3 class="service-title">Mini Splits</h3>
-              <p class="service-desc">High-efficiency heating and cooling with fast installs.</p>
-              <button class="service-btn">View Service</button>
+            <div class="mhv-hero-cta">
+              <a href="#mhv-contact" class="mhv-btn mhv-btn-solid">Book a Service Call</a>
+              <a href="tel:+19025550123" class="mhv-btn mhv-btn-outline">Call 902-555-0123</a>
             </div>
-          </article>
-          <article class="service-card">
-            <img
-              class="service-image"
-              src="/assets/services/central-heat-pumps.png"
-              alt="Central heat pumps"
-            />
-            <div class="service-body">
-              <h3 class="service-title">Central Heat Pumps</h3>
-              <p class="service-desc">Whole-home comfort sized for Maritime winters.</p>
-              <button class="service-btn">View Service</button>
+            <div class="mhv-hero-badges">
+              <span>Licensed & Insured</span>
+              <span>Free Estimates</span>
+              <span>Same-Week Service</span>
             </div>
-          </article>
+          </div>
+
+          <div class="mhv-hero-card">
+            <div class="mhv-card-header">Get a Free Quote</div>
+            <p>Tell us about your home and we will respond within 1 business day.</p>
+            <div class="mhv-form-embed">
+              <script
+                src="https://widgets.leadconnectorhq.com/loader.js"
+                data-resources-url="https://widgets.leadconnectorhq.com/chat-widget/loader.js"
+                data-widget-id="6980534a0079c3d06175557f"
+              ></script>
+            </div>
+            <p class="mhv-form-note">
+              By submitting, you agree to receive calls/texts from Maritime HVAC.
+            </p>
+          </div>
         </div>
-        <div class="services-actions">
-          <button class="svc-main-btn">View All Services</button>
+
+        <div class="mhv-hero-media">
+          <img
+            class="mhv-hero-img"
+            src="https://storage.googleapis.com/msgsndr/ISncZYLu2hGulBBFoZtW/media/698862ff0708e48fde835593.png"
+            alt="Maritime HVAC hero"
+          />
+          <img
+            class="mhv-van-img"
+            src="https://storage.googleapis.com/msgsndr/ISncZYLu2hGulBBFoZtW/media/698861660708e4773c832f2c.png"
+            alt="Maritime HVAC service van"
+          />
         </div>
       </section>
 
-      <section class="section" id="about">
-        <div class="card" style="padding: 24px; display: grid; gap: 16px;">
-          <h1>About Maritime HVAC</h1>
-          <p>
-            We serve the Maritimes with heating, cooling, electrical, ventilation, and water
-            solutions sized for Atlantic weather.
-          </p>
-          <ul style="margin: 0; padding-left: 18px; color: var(--muted);">
-            <li>Licensed and insured technicians</li>
-            <li>Residential and light commercial</li>
-            <li>Fast response and clean installs</li>
-          </ul>
-        </div>
-      </section>
-
-      <section class="section" id="booking">
-        <div class="card booking-card">
-          <h3>Book a Service</h3>
-          <p>Embed your HighLevel booking form below.</p>
-          <div class="booking-placeholder">
-            Booking form embed goes here. (https://maritimehvac.info/bookingservice)
+      <section class="mhv-trust">
+        <div class="mhv-wrap mhv-trust-inner">
+          <div class="mhv-trust-item">
+            <strong>4.9/5</strong><span>Local Reviews</span>
+          </div>
+          <div class="mhv-trust-item">
+            <strong>10+ Years</strong><span>Serving Nova Scotia</span>
+          </div>
+          <div class="mhv-trust-item">
+            <strong>24/7</strong><span>Emergency Support</span>
           </div>
         </div>
       </section>
 
-      <footer class="section" id="contact">
-        <div class="card" style="display: flex; flex-direction: column; gap: 12px;">
-          <strong>Maritime HVAC</strong>
-          <div>Serving the Maritimes - Licensed &amp; Insured</div>
+      <section class="mhv-services" id="mhv-services">
+        <div class="mhv-wrap">
+          <h2>Heating & Cooling Services</h2>
+          <p class="mhv-subhead">Everything you need for year-round comfort.</p>
+          <div class="mhv-grid">
+            <article class="mhv-card">
+              <h3>Heat Pumps</h3>
+              <p>Mini-splits and ducted systems sized for your home and budget.</p>
+            </article>
+            <article class="mhv-card">
+              <h3>Furnaces & Boilers</h3>
+              <p>Installations, tune-ups, and fast repair when it matters most.</p>
+            </article>
+            <article class="mhv-card">
+              <h3>Air Conditioning</h3>
+              <p>Quiet, efficient cooling solutions built to last.</p>
+            </article>
+            <article class="mhv-card">
+              <h3>Maintenance Plans</h3>
+              <p>Seasonal servicing to keep performance high and bills low.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="mhv-why" id="mhv-why">
+        <div class="mhv-wrap mhv-why-inner">
           <div>
-            Email: <a href="mailto:info@maritimehvac.ca">info@maritimehvac.ca</a>
+            <h2>Why homeowners choose us</h2>
+            <ul class="mhv-checklist">
+              <li>Upfront pricing with no surprises</li>
+              <li>Certified, professional technicians</li>
+              <li>Clean worksite and respectful service</li>
+              <li>We stand behind our workmanship</li>
+            </ul>
           </div>
-          <div>Phone: <a href="tel:+1-800-000-0000">+1 (800) 000-0000</a></div>
-          <div style="opacity: 0.75;">
-            &copy; <span id="year"></span> Maritime HVAC. All rights reserved.
+          <div class="mhv-stats">
+            <div class="mhv-stat"><strong>1,200+</strong><span>Homes Served</span></div>
+            <div class="mhv-stat"><strong>98%</strong><span>On-Time Arrivals</span></div>
+            <div class="mhv-stat"><strong>100%</strong><span>Warranty Support</span></div>
           </div>
         </div>
-      </footer>
+      </section>
+
+      <section class="mhv-process" id="mhv-process">
+        <div class="mhv-wrap">
+          <h2>Simple 3-step process</h2>
+          <div class="mhv-steps">
+            <div class="mhv-step">
+              <span class="mhv-step-num">1</span>
+              <h3>Tell us about your home</h3>
+              <p>Quick form or a call to understand your needs.</p>
+            </div>
+            <div class="mhv-step">
+              <span class="mhv-step-num">2</span>
+              <h3>Get a clear estimate</h3>
+              <p>Transparent pricing with equipment options.</p>
+            </div>
+            <div class="mhv-step">
+              <span class="mhv-step-num">3</span>
+              <h3>Install or repair</h3>
+              <p>Fast, tidy, and professional service.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="mhv-cta" id="mhv-contact">
+        <div class="mhv-wrap mhv-cta-inner">
+          <div>
+            <h2>Ready for better comfort?</h2>
+            <p>Book a service call or request a free quote today.</p>
+          </div>
+          <div class="mhv-cta-actions">
+            <a href="tel:+19025550123" class="mhv-btn mhv-btn-outline">Call 902-555-0123</a>
+            <a href="#mhv-contact" class="mhv-btn mhv-btn-solid">Book Now</a>
+          </div>
+        </div>
+      </section>
     </main>
+
+    <footer class="mhv-footer">
+      <div class="mhv-wrap mhv-footer-inner">
+        <div>
+          <strong>Maritime HVAC</strong>
+          <p>Heating & Cooling in Nova Scotia</p>
+        </div>
+        <div class="mhv-footer-links">
+          <a href="#mhv-services">Services</a>
+          <a href="#mhv-why">Why Us</a>
+          <a href="#mhv-process">Process</a>
+          <a href="tel:+19025550123">Call</a>
+        </div>
+      </div>
+    </footer>
 
     <script type="module" src="/src/main.jsx"></script>
   </body>
