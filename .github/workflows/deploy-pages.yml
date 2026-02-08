@@ -1,0 +1,105 @@
+name: Cloudflare Pages — production + PR previews
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    types: [opened, synchronize, reopened]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pull-requests: write
+
+env:
+  # <-- change this to ./public if your build writes to public instead of dist
+  PUBLISH_DIR: ./dist
+
+jobs:
+  build:
+    name: Build site
+    runs-on: ubuntu-latest
+    outputs:
+      publish_dir: ${{ env.PUBLISH_DIR }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build
+        run: npm run build
+
+      - name: Upload site artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: site
+          path: ${{ env.PUBLISH_DIR }}
+
+  publish-prod:
+    name: Publish: production
+    needs: build
+    if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/main' }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download site artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: site
+
+      - name: Install Wrangler
+        run: npm install -g wrangler@2
+
+      - name: Publish to Cloudflare Pages (production)
+        env:
+          CF_API_TOKEN: ${{ secrets.CF_API_TOKEN }}
+          CF_PROJECT_NAME: ${{ secrets.CF_PROJECT_NAME }}
+        run: |
+          echo "Publishing production (branch: main)..."
+          wrangler pages publish ${{ env.PUBLISH_DIR }} --project-name="$CF_PROJECT_NAME" --branch=main
+
+  publish-preview:
+    name: Publish: PR preview
+    needs: build
+    if: ${{ github.event_name == 'pull_request' }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download site artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: site
+
+      - name: Install Wrangler
+        run: npm install -g wrangler@2
+
+      - name: Publish preview to Cloudflare Pages
+        id: publish_preview
+        env:
+          CF_API_TOKEN: ${{ secrets.CF_API_TOKEN }}
+          CF_PROJECT_NAME: ${{ secrets.CF_PROJECT_NAME }}
+        run: |
+          PR_BRANCH="pr-${{ github.event.number }}"
+          echo "Publishing preview branch: ${PR_BRANCH}"
+          OUT=$(wrangler pages publish ${{ env.PUBLISH_DIR }} --project-name="$CF_PROJECT_NAME" --branch="$PR_BRANCH" 2>&1 || true)
+          echo "$OUT"
+          URL=$(echo "$OUT" | grep -Eo 'https?://[a-zA-Z0-9./?=_-]+' | grep -E '\.pages\.dev|\.workers\.dev' | head -n1 || true)
+          if [ -z "$URL" ]; then
+            URL=$(echo "$OUT" | grep -Eo 'https?://[^ ]+' | head -n1 || true)
+          fi
+          echo "url=$URL" >> $GITHUB_OUTPUT
+
+      - name: Comment PR with preview URL
+        uses: peter-evans/create-or-update-comment@v2
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          issue-number: ${{ github.event.number }}
+          body: |
+            ## Cloudflare Pages preview
+            A preview for this PR is available here:
+            ${{ steps.publish_preview.outputs.url }}
