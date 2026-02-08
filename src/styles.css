@@ -248,6 +248,17 @@ body.mhv-home img {
   border-radius: var(--mhv-radius);
   padding: 20px;
   box-shadow: var(--mhv-shadow);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.mhv-card-link {
+  display: block;
+  color: inherit;
+}
+
+.mhv-card-link:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 18px 35px rgba(0, 0, 0, 0.12);
 }
 
 .mhv-why {
