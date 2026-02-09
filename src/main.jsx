@@ -20,4 +20,27 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   });
+
+  const navToggle = document.getElementById('luk-nav-toggle');
+  const navLinksContainer = document.getElementById('luk-nav-links');
+  if (navToggle && navLinksContainer) {
+    navToggle.addEventListener('click', () => {
+      const isOpen = navLinksContainer.classList.toggle('is-open');
+      navToggle.setAttribute('aria-expanded', String(isOpen));
+      navToggle.setAttribute('aria-label', isOpen ? 'Close navigation' : 'Open navigation');
+    });
+
+    document.addEventListener('keydown', (event) => {
+      if (event.key !== 'Escape') {
+        return;
+      }
+
+      if (navLinksContainer.classList.contains('is-open')) {
+        navLinksContainer.classList.remove('is-open');
+        navToggle.setAttribute('aria-expanded', 'false');
+        navToggle.setAttribute('aria-label', 'Open navigation');
+        navToggle.focus();
+      }
+    });
+  }
 });

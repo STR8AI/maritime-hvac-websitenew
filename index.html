@@ -3,482 +3,200 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Maritime HVAC | Heating & Cooling in Nova Scotia</title>
+    <title>LUKAIRO | Engine + Command Centre</title>
     <meta
       name="description"
-      content="Maritime HVAC provides heating, cooling, and service across Nova Scotia with fast response and clear pricing."
+      content="LUKAIRO Engine and Command Centre: orchestrate signal, automate qualification, and operate from a single intelligence surface."
     />
-    <meta name="theme-color" content="#05070a" />
-    <link rel="canonical" href="https://www.maritimehvac.ca/" />
+    <meta name="theme-color" content="#070b10" />
 
-    <!-- fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Source+Sans+3:wght@400;500;600&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Syne:wght@500;600;700;800&family=Work+Sans:wght@400;500;600&display=swap"
     />
 
-    <!-- site CSS -->
-    <link rel="stylesheet" href="/src/styles.css" />
-
-    <!-- JSON-LD: LocalBusiness (replace address/geo with your real details) -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "LocalBusiness",
-      "name": "Maritime HVAC",
-      "description": "Heating, cooling and HVAC service across Nova Scotia.",
-      "telephone": "+1-902-555-6000",
-      "email": "info@maritimehvac.ca",
-      "url": "https://www.maritimehvac.ca",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "123 Example St",
-        "addressLocality": "Halifax",
-        "addressRegion": "NS",
-        "postalCode": "B3H 3A5",
-        "addressCountry": "CA"
-      },
-      "geo": {
-        "@type": "GeoCoordinates",
-        "latitude": 44.6488,
-        "longitude": -63.5752
-      },
-      "openingHoursSpecification": [
-        {
-          "@type": "OpeningHoursSpecification",
-          "dayOfWeek": [
-            "Monday",
-            "Tuesday",
-            "Wednesday",
-            "Thursday",
-            "Friday"
-          ],
-          "opens": "08:00",
-          "closes": "18:00"
-        },
-        {
-          "@type": "OpeningHoursSpecification",
-          "dayOfWeek": [
-            "Saturday"
-          ],
-          "opens": "09:00",
-          "closes": "14:00"
-        },
-        {
-          "@type": "OpeningHoursSpecification",
-          "dayOfWeek": [
-            "Sunday"
-          ],
-          "opens": "00:00",
-          "closes": "23:59",
-          "validFrom": "2026-01-01",
-          "validThrough": "2026-12-31"
-        }
-      ],
-      "sameAs": [
-        "https://www.facebook.com/maritimehvac",
-        "https://www.instagram.com/maritimehvac",
-        "https://www.linkedin.com/company/maritimehvac"
-      ],
-      "areaServed": "Nova Scotia, Canada"
-    }
-    </script>
+    <link rel="stylesheet" href="/src/lukairo.css" />
   </head>
 
-  <body class="mhv-home">
-    <!-- skip link for keyboard users -->
-    <a class="skip-link" href="#main-content">Skip to content</a>
+  <body class="luk-body">
+    <header class="luk-nav" role="banner">
+      <div class="luk-wrap luk-nav-inner">
+        <a class="luk-brand" href="/" aria-label="Lukairo home">
+          <img
+            class="luk-logo"
+            src="https://storage.googleapis.com/msgsndr/B47X3dkLb4AkvxzX2Tck/media/68fdb1e49c7b3a610f587b93.png"
+            alt="Lukairo logo"
+            width="180"
+            height="48"
+            loading="eager"
+            decoding="async"
+          />
+          <span class="luk-brand-text">LUKAIRO</span>
+        </a>
 
-    <header class="mhv-nav" role="banner">
-      <div class="mhv-wrap mhv-nav-inner">
-        <div class="mhv-brand">
-          <a href="/" aria-label="Maritime HVAC home">
-            <!-- fixed: class is mhv-logo and src is the image URL -->
-            <img
-              class="mhv-logo"
-              src="https://storage.googleapis.com/msgsndr/ISncZYLu2hGulBBFoZtW/media/698861662dd985884fe96a16.png"
-              alt="Maritime HVAC logo"
-              loading="eager"
-              decoding="async"
-              width="320"
-              height="80"
-            />
-          </a>
-
-          <span class="mhv-brand-name">Maritime HVAC</span>
-        </div>
-
-        <!-- mobile menu toggle -->
         <button
-          class="mhv-mobile-toggle"
-          aria-controls="primary-navigation"
+          class="luk-nav-toggle"
+          id="luk-nav-toggle"
+          aria-label="Open navigation"
+          aria-controls="luk-nav-links"
           aria-expanded="false"
-          aria-label="Open main menu"
-          id="mhv-mobile-toggle"
         >
-          <svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-            <path fill="currentColor" d="M3 6h18v2H3zM3 11h18v2H3zM3 16h18v2H3z"/>
-          </svg>
+          <span></span>
+          <span></span>
+          <span></span>
         </button>
 
-        <!-- primary navigation -->
-        <nav id="primary-navigation" class="mhv-links" role="navigation" aria-label="Primary">
-          <ul class="mhv-nav-list">
-            <li><a href="#mhv-home">Home</a></li>
-            <li><a href="#mhv-services">Our Services</a></li>
-            <li><a href="#mhv-faqs">FAQs</a></li>
-            <li><a href="#mhv-contact">Contact</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="warranty.html">Warranty</a></li>
-            <li>
-              <a href="#mhv-contact" class="mhv-btn mhv-btn-solid" role="button" aria-label="Book now">
-                Book Now
-              </a>
-            </li>
-          </ul>
+        <nav class="luk-nav-links" id="luk-nav-links" aria-label="Primary">
+          <a href="/engine.html">Engine</a>
+          <a href="/command-centre.html">Command Centre</a>
+          <a href="#capabilities">Capabilities</a>
+          <a href="#contact" class="luk-btn luk-btn-ghost">Book a walkthrough</a>
         </nav>
       </div>
     </header>
 
-    <main id="main-content" role="main">
-      <section class="mhv-hero" id="mhv-home" aria-labelledby="mhv-hero-heading">
-        <div class="mhv-wrap mhv-hero-inner">
-          <div class="mhv-hero-copy">
-            <p class="mhv-eyebrow">
-              Solutions for Our Maritime Climate, Home and Business and Peace of Mind.
+    <main>
+      <section class="luk-hero">
+        <div class="luk-wrap luk-hero-grid">
+          <div class="luk-hero-copy">
+            <p class="luk-kicker">Lukairo Engine</p>
+            <h1>One intelligent engine. One command centre.</h1>
+            <p class="luk-lead">
+              Wire your data, sales, and operations into a single surface. LUKAIRO turns signals into
+              decisions, and decisions into revenue.
             </p>
-
-            <h1 id="mhv-hero-heading">Comfort you can count on in every season.</h1>
-
-            <p class="mhv-lead">
-              Proudly serving our community with trusted residential and commercial
-              services, dependable repairs, and ongoing maintenance.
-            </p>
-
-            <aside class="mhv-owner" aria-label="Owner">
-              <div>
-                <strong>Troy MacPherson</strong>
-                <span>Owner, Veteran</span>
-              </div>
-              <span class="mhv-crest" aria-hidden="true">Navy Crest</span>
-            </aside>
-
-            <div class="mhv-hero-cta">
-              <a href="#mhv-contact" class="mhv-btn mhv-btn-solid">Book a Service Call</a>
-              <a href="tel:+19025556000" class="mhv-btn mhv-btn-outline" aria-label="Call 902 555 6000">Call 902-555-6000</a>
+            <div class="luk-hero-actions">
+              <a class="luk-btn luk-btn-primary" href="/engine.html">Explore the Engine</a>
+              <a class="luk-btn luk-btn-outline" href="/command-centre.html">Enter Command Centre</a>
             </div>
-
-            <div class="mhv-hero-badges" aria-hidden="false">
-              <span>Licensed &amp; Insured</span>
-              <span>Free Estimates</span>
-              <span>Same-Week Service</span>
+            <div class="luk-badges">
+              <span>Real-time orchestration</span>
+              <span>Qualification automation</span>
+              <span>Operator-grade dashboards</span>
             </div>
           </div>
 
-          <aside class="mhv-hero-card" aria-labelledby="quote-heading">
-            <div id="quote-heading" class="mhv-card-header">Get a Free Quote</div>
+          <div class="luk-hero-media">
+            <img
+              src="https://storage.googleapis.com/msgsndr/B47X3dkLb4AkvxzX2Tck/media/692797982b23a26c73edd749.jpeg"
+              alt="Lukairo engine visualization"
+              loading="lazy"
+            />
+            <div class="luk-hero-glow"></div>
+          </div>
+        </div>
+      </section>
 
-            <p>Tell us about your home and we will respond within 1 business day.</p>
+      <section class="luk-modules" id="capabilities">
+        <div class="luk-wrap">
+          <div class="luk-section-head">
+            <p class="luk-kicker">System Modules</p>
+            <h2>Two modules. One operating system.</h2>
+            <p>
+              The Engine handles orchestration and intelligence. The Command Centre is where humans
+              steer the system.
+            </p>
+          </div>
 
-            <div class="mhv-form-embed" aria-live="polite">
-              <script
-                src="https://widgets.leadconnectorhq.com/loader.js"
-                data-resources-url="https://widgets.leadconnectorhq.com/chat-widget/loader.js"
-                data-widget-id="6980534a0079c3d06175557f"
-                async
-              ></script>
-
-              <noscript>
+          <div class="luk-card-grid">
+            <article class="luk-card">
+              <img
+                src="https://storage.googleapis.com/funnel-ai-production/image-generation/B47X3dkLb4AkvxzX2Tck/c0Vd9dCqtME7fhxIcTqWU.png"
+                alt="Lukairo Engine"
+                loading="lazy"
+              />
+              <div class="luk-card-body">
+                <h3>Engine</h3>
                 <p>
-                  The contact form requires JavaScript. Please call
-                  <a href="tel:+19025556000">902-555-6000</a> or email
-                  <a href="mailto:info@maritimehvac.ca">info@maritimehvac.ca</a>.
+                  Automate qualification, enrichment, routing, and execution. The Engine is the
+                  autonomous layer.
                 </p>
-              </noscript>
-            </div>
-
-            <p class="mhv-form-note">
-              By submitting, you agree to receive calls/texts from Maritime HVAC.
-            </p>
-          </aside>
-        </div>
-
-        <!-- hero image: width/height added and CSS includes aspect-ratio to reserve space -->
-        <img
-          class="mhv-hero-figure"
-          src="https://storage.googleapis.com/msgsndr/ISncZYLu2hGulBBFoZtW/media/698862ff0708e48fde835593.png"
-          alt="Maritime HVAC technician"
-          loading="lazy"
-          decoding="async"
-          width="1000"
-          height="667"
-        />
-      </section>
-
-      <section class="mhv-trust" id="mhv-trust">
-        <div class="mhv-wrap mhv-trust-inner">
-          <div class="mhv-trust-item">
-            <strong>4.9/5</strong><span>Local Reviews</span>
-          </div>
-          <div class="mhv-trust-item">
-            <strong>10+ Years</strong><span>Serving Nova Scotia</span>
-          </div>
-          <div class="mhv-trust-item">
-            <strong>24/7</strong><span>Emergency Support</span>
-          </div>
-        </div>
-      </section>
-
-      <!-- Our Services block for HighLevel -->
-      <section class="section our-services our-services--van" id="services">
-        <div class="wrap svc-layout">
-          <div class="svc-visual">
-            <div class="svc-badges">
-              <span class="svc-badge">Same-day dispatch</span>
-              <span class="svc-badge svc-badge--hooks">Web hooks ready</span>
-            </div>
-            <div class="svc-van-wrap">
-              <img class="svc-van" src="/assets/images/van.png" alt="Maritime HVAC service van" />
-            </div>
-            <div class="svc-hooks" aria-label="Webhook + notifications">
-              <div class="svc-hook-title">Web booking + notifications</div>
-              <p>Online requests fire webhooks into your CRM, SMS, or email so the crew rolls out fast.</p>
-              <div class="svc-hook-pills">
-                <span class="svc-pill">Webhook</span>
-                <span class="svc-pill">SMS</span>
-                <span class="svc-pill">Email</span>
+                <a class="luk-text-link" href="/engine.html">View Engine →</a>
               </div>
-            </div>
+            </article>
+
+            <article class="luk-card">
+              <img
+                src="https://storage.googleapis.com/funnel-ai-production/image-generation/B47X3dkLb4AkvxzX2Tck/NeWLflBjrFkentMMQTWP6.png"
+                alt="Lukairo Command Centre"
+                loading="lazy"
+              />
+              <div class="luk-card-body">
+                <h3>Command Centre</h3>
+                <p>
+                  Control live pipelines, see the truth, and hand off to human teams when the
+                  moment calls for it.
+                </p>
+                <a class="luk-text-link" href="/command-centre.html">View Command Centre →</a>
+              </div>
+            </article>
           </div>
+        </div>
+      </section>
 
-          <div class="svc-content">
-            <p class="svc-kicker">Serving the Maritimes • Residential & Commercial</p>
-            <h2 class="svc-title">Our Services</h2>
-            <p class="svc-lead">Heating, cooling, electrical, and maintenance solutions built for Maritime weather. Pick a category and tell us what you need when you request service.</p>
-
-            <div class="svc-grid" role="list">
-              <article class="svc-card" role="listitem">
-                <div class="svc-card__head">
-                  <span class="svc-icon svc-icon--heat" aria-hidden="true"></span>
-                  <div>
-                    <h3>Heating + Cooling</h3>
-                    <p class="svc-note">Year-round comfort systems</p>
-                  </div>
-                </div>
-                <ul class="svc-list">
-                  <li>Heat pumps (ducted / ductless)</li>
-                  <li>Mini splits</li>
-                  <li>Furnaces + air conditioners</li>
-                  <li>Air exchangers + ventilation</li>
-                  <li>Heat recovery + roof top units</li>
-                </ul>
-                <div class="svc-actions">
-                  <a class="svc-btn" href="../02-pages/booking.html">Request service</a>
-                  <a class="svc-link" href="../02-pages/contact.html">Talk to an expert</a>
-                </div>
-              </article>
-
-              <article class="svc-card" role="listitem">
-                <div class="svc-card__head">
-                  <span class="svc-icon svc-icon--electric" aria-hidden="true"></span>
-                  <div>
-                    <h3>Electrical</h3>
-                    <p class="svc-note">Power upgrades and wiring</p>
-                  </div>
-                </div>
-                <ul class="svc-list">
-                  <li>Panel upgrades (100 / 200 / 400 amp)</li>
-                  <li>EV charging station installation</li>
-                  <li>Generators (standby / portable)</li>
-                  <li>Oil to electric conversions</li>
-                  <li>Renovations, fixtures, appliance circuits</li>
-                </ul>
-                <div class="svc-actions">
-                  <a class="svc-btn" href="../02-pages/booking.html">Request service</a>
-                  <a class="svc-link" href="../02-pages/contact.html">Ask about a quote</a>
-                </div>
-              </article>
-
-              <article class="svc-card" role="listitem">
-                <div class="svc-card__head">
-                  <span class="svc-icon svc-icon--water" aria-hidden="true"></span>
-                  <div>
-                    <h3>Water + Air Solutions</h3>
-                    <p class="svc-note">Clean water and air quality</p>
-                  </div>
-                </div>
-                <ul class="svc-list">
-                  <li>Hot water tanks + tankless</li>
-                  <li>Air purification + humidifiers</li>
-                  <li>Water treatment (filters, UV, softening)</li>
-                  <li>Air exchangers + ventilation</li>
-                  <li>Dehumidifiers + mold prevention</li>
-                </ul>
-                <div class="svc-actions">
-                  <a class="svc-btn" href="../02-pages/booking.html">Request service</a>
-                  <a class="svc-link" href="../02-pages/contact.html">Schedule inspection</a>
-                </div>
-              </article>
-
-              <article class="svc-card" role="listitem">
-                <div class="svc-card__head">
-                  <span class="svc-icon svc-icon--care" aria-hidden="true"></span>
-                  <div>
-                    <h3>Service & Maintenance Plans</h3>
-                    <p class="svc-note">Protection and priority support</p>
-                  </div>
-                </div>
-                <ul class="svc-list">
-                  <li>Heat pump cleaning</li>
-                  <li>Heating + cooling tune-ups</li>
-                  <li>Refrigeration service</li>
-                  <li>Seasonal checkups</li>
-                  <li>Priority scheduling</li>
-                </ul>
-                <div class="svc-actions">
-                  <a class="svc-btn" href="../02-pages/booking.html">Enroll now</a>
-                  <a class="svc-link" href="../02-pages/contact.html">See plan options</a>
-                </div>
-              </article>
+      <section class="luk-capabilities">
+        <div class="luk-wrap luk-capabilities-grid">
+          <div>
+            <p class="luk-kicker">Capabilities</p>
+            <h2>Signal to decision in one timeline.</h2>
+          </div>
+          <div class="luk-cap-list">
+            <div>
+              <h4>Signal Ingestion</h4>
+              <p>Capture leads, payments, and lifecycle events in seconds, not days.</p>
+            </div>
+            <div>
+              <h4>Qualification Logic</h4>
+              <p>Qualify, score, and route without human bottlenecks.</p>
+            </div>
+            <div>
+              <h4>Operator Orchestration</h4>
+              <p>Real-time cockpit for teams, alerts, and escalations.</p>
+            </div>
+            <div>
+              <h4>Revenue Intelligence</h4>
+              <p>Know which signals convert and why, without manual reporting.</p>
             </div>
           </div>
         </div>
       </section>
 
-      <section class="mhv-trusted" id="mhv-trusted">
-        <div class="mhv-wrap mhv-trusted-inner">
+      <section class="luk-cta" id="contact">
+        <div class="luk-wrap luk-cta-inner">
           <div>
-            <p class="mhv-kicker">Trusted. Certified. Local.</p>
-            <h2>Licensed experts delivering reliable installs, repairs, service, and maintenance.</h2>
+            <h2>Ready for a Lukairo walkthrough?</h2>
             <p>
-              Residential and commercial systems are covered by a team focused on safety,
-              professionalism, and long-term performance.
+              We map your stack, show the command surface, and plan the automation runway in one
+              session.
             </p>
           </div>
-          <div class="mhv-stats">
-            <div class="mhv-stat"><strong>1,200+</strong><span>Homes Served</span></div>
-            <div class="mhv-stat"><strong>98%</strong><span>On-Time Arrivals</span></div>
-            <div class="mhv-stat"><strong>100%</strong><span>Warranty Support</span></div>
-          </div>
-        </div>
-      </section>
-
-      <section class="mhv-testimonials" id="mhv-testimonials">
-        <div class="mhv-wrap">
-          <div class="mhv-section-title">
-            <p class="mhv-kicker">Testimonials</p>
-            <h2>Our work speaks for itself.</h2>
-            <p>
-              Copy and paste testimonials from any CD Maritime HVAC funnel.
-            </p>
-          </div>
-          <div class="mhv-testimonial-grid">
-            <div class="mhv-testimonial-card">Add testimonial here.</div>
-            <div class="mhv-testimonial-card">Add testimonial here.</div>
-            <div class="mhv-testimonial-card">Add testimonial here.</div>
-          </div>
-        </div>
-      </section>
-
-      <section class="mhv-faq" id="mhv-faqs">
-        <div class="mhv-wrap">
-          <div class="mhv-section-title">
-            <p class="mhv-kicker">Frequently Asked Questions</p>
-            <h2>Have questions? We have answers.</h2>
-            <p>We will add final questions with Troy and Tara.</p>
-          </div>
-          <div class="mhv-faq-list">
-            <details class="mhv-faq-item">
-              <summary>Question?</summary>
-              <p>Answer.</p>
-            </details>
-            <details class="mhv-faq-item">
-              <summary>Question?</summary>
-              <p>Answer.</p>
-            </details>
-            <details class="mhv-faq-item">
-              <summary>Question?</summary>
-              <p>Answer.</p>
-            </details>
-            <details class="mhv-faq-item">
-              <summary>Question?</summary>
-              <p>Answer.</p>
-            </details>
-            <details class="mhv-faq-item">
-              <summary>Question?</summary>
-              <p>Answer.</p>
-            </details>
-          </div>
-        </div>
-      </section>
-
-      <section class="mhv-cta" id="mhv-contact">
-        <div class="mhv-wrap mhv-cta-inner">
-          <div>
-            <h2>Contact & Connect</h2>
-            <p>Email us at <a href="mailto:info@maritimehvac.ca">info@maritimehvac.ca</a>.</p>
-          </div>
-          <div class="mhv-cta-actions">
-            <a href="tel:+19025556000" class="mhv-btn mhv-btn-outline">Call 902-555-6000</a>
-            <a href="#mhv-contact" class="mhv-btn mhv-btn-solid">Book Now</a>
+          <div class="luk-cta-actions">
+            <a class="luk-btn luk-btn-primary" href="mailto:hello@lukairo.com">Book a call</a>
+            <a class="luk-btn luk-btn-outline" href="/command-centre.html">See the Command Centre</a>
           </div>
         </div>
       </section>
     </main>
 
-    <footer class="mhv-footer" role="contentinfo">
-      <div class="mhv-wrap mhv-footer-inner">
+    <footer class="luk-footer">
+      <div class="luk-wrap luk-footer-inner">
         <div>
-          <strong>Maritime HVAC</strong>
-          <p>Heating &amp; Cooling in Nova Scotia</p>
+          <strong>LUKAIRO</strong>
+          <p>Engine + Command Centre</p>
         </div>
-
-        <div class="mhv-footer-links">
-          <a href="#mhv-home">Home</a>
-          <a href="#mhv-services">Our Services</a>
-          <a href="#mhv-faqs">FAQs</a>
-          <a href="#mhv-contact">Contact</a>
-          <a href="about.html">About</a>
-          <a href="warranty.html">Warranty</a>
-          <a href="privacy.html">Privacy Policy</a>
+        <div class="luk-footer-links">
+          <a href="/engine.html">Engine</a>
+          <a href="/command-centre.html">Command Centre</a>
+          <a href="#capabilities">Capabilities</a>
         </div>
-
-        <div class="mhv-footer-legal">
-          <span>© 2026 Maritime HVAC. All rights reserved.</span>
-          <span>Images and figures presented above are for illustrative purposes only.</span>
+        <div class="luk-footer-meta">
+          <span>© <span id="year"></span> Lukairo. All rights reserved.</span>
         </div>
       </div>
     </footer>
 
-    <!-- accessible mobile toggle script (unchanged behavior) -->
-    <script>
-      (function () {
-        const toggle = document.getElementById("mhv-mobile-toggle");
-        const nav = document.getElementById("primary-navigation");
-
-        if (!toggle || !nav) return;
-
-        toggle.addEventListener("click", function () {
-          const expanded = this.getAttribute("aria-expanded") === "true";
-          this.setAttribute("aria-expanded", String(!expanded));
-          nav.classList.toggle("open");
-          this.setAttribute("aria-label", expanded ? "Open main menu" : "Close main menu");
-        });
-
-        document.addEventListener("keydown", function (e) {
-          if (e.key === "Escape" && nav.classList.contains("open")) {
-            nav.classList.remove("open");
-            toggle.setAttribute("aria-expanded", "false");
-            toggle.setAttribute("aria-label", "Open main menu");
-            toggle.focus();
-          }
-        });
-      })();
-    </script>
-
-    <script src="/public/script.js"></script>
     <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>
