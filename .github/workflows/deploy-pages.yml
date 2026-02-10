@@ -52,17 +52,17 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           name: site
+          path: dist
 
       - name: Install Wrangler
-        run: npm install -g wrangler@2
+        run: npm install -g wrangler@3
 
       - name: Publish to Cloudflare Pages (production)
         env:
-          CF_API_TOKEN: ${{ secrets.CF_API_TOKEN }}
-          CF_PROJECT_NAME: ${{ secrets.CF_PROJECT_NAME }}
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CF_API_TOKEN }}
         run: |
           echo "Publishing production (branch: main)..."
-          wrangler pages publish ${{ env.PUBLISH_DIR }} --project-name="$CF_PROJECT_NAME" --branch=main
+          wrangler pages deploy dist --project-name="${{ secrets.CF_PROJECT_NAME }}" --branch=main
 
   publish-preview:
     name: Publish: PR preview
@@ -74,19 +74,19 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           name: site
+          path: dist
 
       - name: Install Wrangler
-        run: npm install -g wrangler@2
+        run: npm install -g wrangler@3
 
       - name: Publish preview to Cloudflare Pages
         id: publish_preview
         env:
-          CF_API_TOKEN: ${{ secrets.CF_API_TOKEN }}
-          CF_PROJECT_NAME: ${{ secrets.CF_PROJECT_NAME }}
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CF_API_TOKEN }}
         run: |
           PR_BRANCH="pr-${{ github.event.number }}"
           echo "Publishing preview branch: ${PR_BRANCH}"
-          OUT=$(wrangler pages publish ${{ env.PUBLISH_DIR }} --project-name="$CF_PROJECT_NAME" --branch="$PR_BRANCH" 2>&1 || true)
+          OUT=$(wrangler pages deploy dist --project-name="${{ secrets.CF_PROJECT_NAME }}" --branch="$PR_BRANCH" 2>&1 || true)
           echo "$OUT"
           URL=$(echo "$OUT" | grep -Eo 'https?://[a-zA-Z0-9./?=_-]+' | grep -E '\.pages\.dev|\.workers\.dev' | head -n1 || true)
           if [ -z "$URL" ]; then
