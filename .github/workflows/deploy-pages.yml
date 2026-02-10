@@ -43,7 +43,7 @@ jobs:
           path: ${{ env.PUBLISH_DIR }}
 
   publish-prod:
-    name: Publish: production
+    name: "Publish: production"
     needs: build
     if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/main' }}
     runs-on: ubuntu-latest
@@ -65,7 +65,7 @@ jobs:
           wrangler pages deploy dist --project-name="${{ secrets.CF_PROJECT_NAME }}" --branch=main
 
   publish-preview:
-    name: Publish: PR preview
+    name: "Publish: PR preview"
     needs: build
     if: ${{ github.event_name == 'pull_request' }}
     runs-on: ubuntu-latest
