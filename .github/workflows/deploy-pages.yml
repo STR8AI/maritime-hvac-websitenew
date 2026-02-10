@@ -1,4 +1,4 @@
-name: Cloudflare Pages — production + PR previews
+name: Cloudflare Pages Deploy
 
 on:
   push:
