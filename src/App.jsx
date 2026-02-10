@@ -104,6 +104,33 @@ export default function App() {
           <button className="svc-main-btn">VIEW ALL SERVICES</button>
         </div>
       </section>
+
+      <section className="logos-section" id="partners">
+        <div className="logos-head">
+          <h2>Trusted Certifications & Partners</h2>
+          <p>Licensed, certified, and backed by industry leaders</p>
+        </div>
+        <div className="logos-grid">
+          <div className="logo-item">
+            <img src="/assets/bbb-logo-1.png" alt="Better Business Bureau" />
+          </div>
+          <div className="logo-item">
+            <img src="/assets/NSPI-Preferred-Contractor-JPG.png" alt="NSPI Preferred Contractor" />
+          </div>
+          <div className="logo-item">
+            <img src="/assets/ENS-Partner-logo-2015.png" alt="Efficiency Nova Scotia Partner" />
+          </div>
+          <div className="logo-item">
+            <img src="/assets/hrai.png" alt="HRAI" />
+          </div>
+          <div className="logo-item">
+            <img src="/assets/red-seal-logo.png" alt="Red Seal Certified" />
+          </div>
+          <div className="logo-item">
+            <img src="/assets/veteranowned.png" alt="Veteran Owned" />
+          </div>
+        </div>
+      </section>
       <ChatBookingWidget open={bookingOpen} onClose={() => setBookingOpen(false)} />
     </div>
   );

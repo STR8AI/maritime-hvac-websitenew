@@ -14,7 +14,7 @@ export default function Hero({ onOpenBooking }) {
 
       <div className="hero-inner">
         <div className="hero-copy">
-          <h1>Maritime HVAC</h1>
+          <h1>Maritime-ready solutions for our homes, businesses and peace of mind.</h1>
           <h2>Peggy's Cove comfort, delivered</h2>
 
           <p>
